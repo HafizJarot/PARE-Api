@@ -1,37 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Api\Penyewa;
+namespace App\Http\Controllers\Api\Pemilik;
 
 use App\Http\Controllers\Controller;
 use App\Produk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProdukController extends Controller
 {
-    public function index()
+	public function __construct()
     {
-        $datas = Produk::all();
-
-        $item = [];
-        foreach ($datas as $data) {
-            $item[] = [
-                'id' => $data->id,
-                'ukuran' => $data->ukuran,
-                'masa_berlaku' => $data->masa_berlaku,
-                'keterangan' => $data->keterangan,
-                'harga_sewa' => $data->harga_sewa,
-                'user' => $data->user,
-
-            ];
-        }
-
-        return response()->json([
-            'message' => 'berhasil',
-            'status' => true,
-            'data' => $item
-        ]);
+        $this->middleware('auth:api');
     }
-
 
     public function store(Request $request)
     {
