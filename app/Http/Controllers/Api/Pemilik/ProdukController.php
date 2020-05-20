@@ -18,12 +18,12 @@ class ProdukController extends Controller
 
     public function index(){
 	    try{
-	        $produk = Produk::where('id_user', Auth::user()->id)->get();
+	        $produks = Produk::where('id_user', Auth::user()->id)->get();
 
 	        return response()->json([
-                'message' => 'berhasil',
+                'message' => 'berhasil mengambil data berdasarkan user',
                 'status' => true,
-                'data' => $produk
+                'data' => ProdukResource::collection($produks)
             ]);
         }catch (\Exception $exception){
             return response()->json([
