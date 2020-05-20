@@ -3,32 +3,26 @@
 namespace App\Http\Controllers\Api\Penyewa;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\ProdukResource;
 use App\Produk;
 use Illuminate\Http\Request;
 
 class ProdukController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+
     public function index()
     {
         try{
             $datas = Produk::all();
-            $item = [];
-            foreach ($datas as $data) {
-                $item[] = [
-                    'id' => $data->id,
-                    'ukuran' => $data->ukuran,
-                    'masa_berlaku' => $data->masa_berlaku,
-                    'keterangan' => $data->keterangan,
-                    'harga_sewa' => $data->harga_sewa,
-                    'user' => $data->user,
-
-                ];
-            }
 
             return response()->json([
                 'message' => 'berhasil',
                 'status' => true,
-                'data' => $item
+                'data' => ProdukResource::collection($datas)
             ]);
         }catch (\Exception $exception){
             return response()->json([

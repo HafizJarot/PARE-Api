@@ -18,7 +18,7 @@ class ProdukController extends Controller
 
     public function index(){
 	    try{
-	        $produk = Produk::where('id_user', Auth::user()->id);
+	        $produk = Produk::where('id_user', Auth::user()->id)->get();
 
 	        return response()->json([
                 'message' => 'berhasil',
