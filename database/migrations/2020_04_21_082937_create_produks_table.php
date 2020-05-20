@@ -16,10 +16,15 @@ class CreateProduksTable extends Migration
         Schema::create('produks', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_user')->unsigned();
-            $table->integer('ukuran');
-            $table->string('masa_berlaku');
+            $table->integer('panjang');
+            $table->integer('lebar');
+            $table->string('foto');
+            $table->string('masa_berlaku')->nullable();
             $table->string('keterangan');
             $table->integer('harga_sewa');
+            $table->string('alamat');
+
+            $table->boolean('status')->default(false);
             $table->timestamps();
 
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');

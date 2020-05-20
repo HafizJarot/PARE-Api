@@ -21,8 +21,10 @@ Route::get('user/email/verify/{id}', 'Api\Auth\VerificationController@verify')->
 Route::get('user/email/resend', 'Api\Auth\VerificationController@resend')->name('api.verification.resend');
 
 
-Route::get('produk','Api\Penyewa\ProdukController@index');
+Route::get('produk/all','Api\Penyewa\ProdukController@index');
 Route::post('order','Api\Penyewa\OrderController@order');
 
-
+Route::get('produk','Api\Penyewa\ProdukController@index');
 Route::post('produk/store', 'Api\Pemilik\ProdukController@store');
+Route::post('produk/{id}/update', 'Api\Pemilik\ProdukController@update');
+Route::get('produk/{id}/delete','Api\Pemilik\ProdukController@delete');

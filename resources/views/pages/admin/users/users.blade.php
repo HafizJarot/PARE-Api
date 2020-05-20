@@ -39,6 +39,7 @@
                                     <th>No</th>
                                     <th>No Izin</th>
                                     <th>Nama Pemilik</th>
+                                    <th>Nama</th>
                                     <th>Alamat</th>
                                     <th>Nomor Telepon</th>
                                     <th>Email</th>
@@ -51,6 +52,7 @@
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$user->no_izin}}</td>
                                         <td>{{$user->nama_perusahaan}}</td>
+                                        <td>{{$user->nama}}</td>
                                         <td>{{$user->alamat}}</td>
                                         <td>{{$user->no_telp}}</td>
                                         <td>{{$user->email}}</td>
