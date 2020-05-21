@@ -12,9 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('templates.default');
+    return redirect()->route('dashboard');
 });
 
+Route::get('dashboard', 'superadmin\DashboardController@index')->name('dashboard');
 
 Route::resource('/notif', 'superadmin\NotifikasiPemilikReklameController')->only('index');
 Route::get('/notif/{id}', 'superadmin\NotifikasiPemilikReklameController@update')->name('notif.update');
