@@ -25,7 +25,7 @@ class RegisterController extends Controller
         ]);
 
         $user = new User();
-        $user->name = $request->name;
+        $user->nama = $request->nama;
         $user->nama_perusahaan = $request->nama_perusahaan;
         $user->email = $request->email;
         $user->role = $request->role;
