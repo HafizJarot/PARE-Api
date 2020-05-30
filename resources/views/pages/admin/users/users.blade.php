@@ -39,7 +39,6 @@
                                     <th>No</th>
                                     <th>No Izin</th>
                                     <th>Nama Pemilik</th>
-                                    <th>Nama</th>
                                     <th>Alamat</th>
                                     <th>Nomor Telepon</th>
                                     <th>Email</th>

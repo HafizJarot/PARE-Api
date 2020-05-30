@@ -12,20 +12,20 @@ use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('guest:user');
     }
 
     public function register(Request $request){
+
         $this->validate($request,[
-           'nama_perusahaan' => 'required',
            'email' => 'required|email|unique:users',
            'password' => 'required'
         ]);
 
         $user = new User();
+        $user->name = $request->name;
         $user->nama_perusahaan = $request->nama_perusahaan;
         $user->email = $request->email;
         $user->role = $request->role;
@@ -35,16 +35,11 @@ class RegisterController extends Controller
         $user->sendApiEmailVerificationNotification();
         $message = "Cek Email Anda, Verifikasi Dahulu";
 
-
         return response()->json([
-           'message'=>$message,
-           'status'=>true,
-           'data'=>$user
+           'message' => $message,
+           'status' => true,
+           'data' => $user
         ]);
 
-
-
     }
-
-
 }
