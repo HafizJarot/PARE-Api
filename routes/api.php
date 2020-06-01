@@ -15,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::post('user/register','Api\Auth\RegisterController@register');
-Route::post('user/login','Api\Auth\LoginController@login');
+Route::post('user/register/penyewa','Api\Auth\RegisterController@registerPenyewa');
+Route::post('user/register/pemilik','Api\Auth\RegisterController@registerPemilik');
+Route::post('user/login/pemilik','Api\Auth\LoginController@loginPemilik');
+Route::post('user/login/penyewa','Api\Auth\LoginController@loginPenyewa');
 Route::get('user/email/verify/{id}', 'Api\Auth\VerificationController@verify')->name('api.verification.verify');
 Route::get('user/email/resend', 'Api\Auth\VerificationController@resend')->name('api.verification.resend');
 
