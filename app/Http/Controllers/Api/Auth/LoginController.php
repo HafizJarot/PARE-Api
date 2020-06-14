@@ -22,6 +22,13 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
+        if ($request->role != false){
+            response()->json([
+                'message' => 'anda bukan penyewa!',
+                'status' => false,
+            ]);
+        }
+
         $credentials = [
             'email' => $request-> email,
             'password' => $request-> password,
@@ -61,10 +68,16 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
+        if ($request->role != true){
+            response()->json([
+                'message' => 'anda bukan pemilik!',
+                'status' => false,
+            ]);
+        }
+
         $credentials = [
-            'email' => $request-> email,
-            'password' => $request-> password,
-            'role' => true
+            'email' => $request->email,
+            'password' => $request->password,
         ];
 
         if (Auth::guard('user')->attempt($credentials)){
