@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProdukResource extends JsonResource
@@ -14,18 +15,20 @@ class ProdukResource extends JsonResource
      */
     public function toArray($request)
     {
-        return [
-            "id" => $this->id,
-            "panjang" => $this->panjang,
-            "lebar" => $this->lebar,
-            "foto" => $this->foto,
-            "masa_berlaku" => $this->masa_berlaku,
-            "keterangan" => $this->keterangan,
-            "harga_sewa" => $this->harga_sewa,
-            "alamat" => $this->alamat,
-            "status" => $this->status,
-            "user" => new UserResource($this->user)
 
+
+        return [
+            "id"            => $this->id,
+            "panjang"       => $this->panjang,
+            "lebar"         => $this->lebar,
+            "sisi"          => $this->sisi,
+            "foto"          => $this->foto,
+            "masa_berdiri"  => $this->masa_berdiri,
+            "keterangan"    => $this->keterangan,
+            "harga_sewa"    => $this->harga_sewa,
+            "alamat"        => $this->alamat,
+            "status"        => $this->status,
+            "user"          => new UserResource($this->user)
 
         ];
     }

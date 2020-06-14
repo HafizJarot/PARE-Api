@@ -19,10 +19,11 @@ class CreateProduksTable extends Migration
             $table->integer('panjang');
             $table->integer('lebar');
             $table->string('foto');
-            $table->string('masa_berlaku')->nullable();
+            $table->date('masa_berdiri');
             $table->string('keterangan');
             $table->integer('harga_sewa');
             $table->string('alamat');
+            $table->integer('sisi');
             $table->boolean('status')->default(false);
             $table->timestamps();
 

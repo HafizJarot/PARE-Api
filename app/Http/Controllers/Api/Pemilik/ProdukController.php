@@ -40,7 +40,8 @@ class ProdukController extends Controller
             $validator = Validator::make($request->all(),[
                'panjang' => 'required|numeric',
                'lebar' => 'required|numeric',
-               'masa_berlaku' => 'required',
+               'masa_berdiri' => 'required',
+               'sisi' => 'required',
                'keterangan' => 'required|',
                'harga_sewa' => 'required|numeric',
                'foto' => 'required|file|image',
@@ -64,12 +65,13 @@ class ProdukController extends Controller
             $produk->id_user = Auth::user()->id;
             $produk->panjang = $request->panjang;
             $produk->lebar = $request->lebar;
-            $produk->masa_berlaku = $request->masa_berlaku;
+            $produk->masa_berdiri = $request->masa_berdiri;
+            $produk->sisi = $request->sisi;
             $produk->keterangan = $request->keterangan;
             $produk->harga_sewa = $request->harga_sewa;
             $produk->foto = $path;
             $produk->alamat = $request->alamat;
-            $produk->status = false;
+            $produk->status = true;
             $produk->save();
 
             return response()->json([
@@ -91,6 +93,8 @@ class ProdukController extends Controller
             $validator = Validator::make($request->all(),[
                 'panjang' => 'numeric',
                 'lebar' => 'numeric',
+                'masa_berdiri' => 'required',
+                'sisi' => 'required',
                 'harga_sewa' => 'numeric',
                 'foto' => 'file|image',
             ]);
@@ -107,7 +111,8 @@ class ProdukController extends Controller
             $produk->id_user = Auth::user()->id;
             $produk->panjang = $request->panjang;
             $produk->lebar = $request->lebar;
-            $produk->masa_berlaku = $request->masa_berlaku;
+            $produk->masa_berdiri = $request->masa_berdiri;
+            $produk->sisi = $request->sisi;
             $produk->keterangan = $request->keterangan;
             $photo = $request->file('foto');
             if ($photo){

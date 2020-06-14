@@ -19,8 +19,12 @@ class CreateOrdersTable extends Migration
             $table->integer('id_pemilik')->unsigned();
             $table->integer('id_produk')->unsigned();
             $table->integer('harga');
-            $table->integer('waktu_sewa');
             $table->integer('total_harga');
+            $table->date('tanggal_mulai_sewa');
+            $table->date('selesai_sewa');
+            $table->string('verifikasi');
+            $table->string('status')->default('pending');
+            $table->string('snap')->nullable();
             $table->timestamps();
 
             $table->foreign('id_penyewa')->references('id')->on('users')->onDelete('cascade');

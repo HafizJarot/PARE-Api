@@ -30,3 +30,5 @@ Route::get('produk','Api\Pemilik\ProdukController@index');
 Route::post('produk/store', 'Api\Pemilik\ProdukController@store');
 Route::post('produk/{id}/update', 'Api\Pemilik\ProdukController@update');
 Route::get('produk/{id}/delete','Api\Pemilik\ProdukController@delete');
+
+Route::post('order/store', 'Api\Penyewa\OrderController@store');

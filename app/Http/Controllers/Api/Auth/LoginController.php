@@ -68,21 +68,11 @@ class LoginController extends Controller
 
         if (Auth::guard('user')->attempt($credentials)){
             $user = Auth::guard('user')->user();
-            if ($user->email_verified_at !== null){
-                return response()->json([
-                    'status' => true,
-                    'message' => 'Anda berhasil login',
-                    'data' => $user,
-                ], 200);
-
-            }else{
-                return response()->json([
-                    'status' => false,
-                    'message' => 'verifikasi email anda dahulu',
-                    'data' => (object)[],
-                ], 401);
-
-            }
+            return response()->json([
+                'status' => true,
+                'message' => 'Anda berhasil login',
+                'data' => $user,
+            ], 200);
         }else{
             return response()->json([
                 'status' => false,
