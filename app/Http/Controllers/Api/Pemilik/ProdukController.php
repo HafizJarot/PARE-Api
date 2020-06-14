@@ -115,6 +115,8 @@ class ProdukController extends Controller
                 $destinationPath = public_path('uploads/produk');
                 $photo->move($destinationPath, $path);
                 $produk->foto = $path;
+            }else{
+                $produk->foto = $produk->foto;
             }
             $produk->harga_sewa = $request->harga_sewa;
             $produk->alamat = $request->alamat;
@@ -136,7 +138,6 @@ class ProdukController extends Controller
     }
 
     public function delete ($id) {
-
 	    try{
 	        $produk = Produk::find($id);
 	        $produk->delete();

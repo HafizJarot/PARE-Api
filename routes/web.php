@@ -21,6 +21,7 @@ Route::resource('/notif', 'superadmin\NotifikasiPemilikReklameController')->only
 Route::get('/notif/{id}', 'superadmin\NotifikasiPemilikReklameController@update')->name('notif.update');
 Route::resource('/users', 'superadmin\PemilikReklameController');
 
+
 //Auth::routes();
 
 Auth::routes(['verify' => true]);

@@ -20,7 +20,7 @@ class RegisterController extends Controller
     public function registerPenyewa(Request $request){
 
         $this->validate($request,[
-            'name' => 'required',
+            'nama' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required'
         ]);

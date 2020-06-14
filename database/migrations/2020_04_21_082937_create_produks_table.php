@@ -23,7 +23,6 @@ class CreateProduksTable extends Migration
             $table->string('keterangan');
             $table->integer('harga_sewa');
             $table->string('alamat');
-
             $table->boolean('status')->default(false);
             $table->timestamps();
 

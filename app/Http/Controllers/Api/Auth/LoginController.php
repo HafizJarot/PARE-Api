@@ -25,7 +25,7 @@ class LoginController extends Controller
         $credentials = [
             'email' => $request-> email,
             'password' => $request-> password,
-            'role' => 0
+            'role' => false
         ];
 
         if (Auth::guard('user')->attempt($credentials)){
@@ -64,7 +64,7 @@ class LoginController extends Controller
         $credentials = [
             'email' => $request-> email,
             'password' => $request-> password,
-            'role' => 1
+            'role' => true
         ];
 
         if (Auth::guard('user')->attempt($credentials)){
