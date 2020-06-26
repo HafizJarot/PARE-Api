@@ -16,7 +16,7 @@ class UserController extends Controller
 
     public function profile()
     {
-        $user = User::where('id', Auth::user()->id)->get();
+        $user = User::where('id', Auth::user()->id)->first();
 
         return response()->json([
             'message' => 'successfully get profile user',

@@ -45,4 +45,5 @@ class ProdukController extends Controller
             ]);
         }
     }
+
 }
