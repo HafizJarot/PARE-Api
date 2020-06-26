@@ -25,6 +25,8 @@ Route::get('user/profile', 'Api\Penyewa\UserController@profile');
 
 
 Route::get('produk/all','Api\Penyewa\ProdukController@index');
+Route::post('produk/search','Api\Penyewa\ProdukController@search');
+
 Route::post('order','Api\Penyewa\OrderController@order');
 
 Route::get('produk','Api\Pemilik\ProdukController@index');
