@@ -7,6 +7,7 @@ use App\Http\Resources\ProdukResource;
 use App\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class ProdukController extends Controller
@@ -57,9 +58,9 @@ class ProdukController extends Controller
             }
 
             $photo = $request->file('foto');
-            $path = time() . '.' . $photo->getClientOriginalExtension();
-            $destinationPath = public_path('uploads/produk');
-            $photo->move($destinationPath, $path);
+            $filename = time() . '.' . $photo->getClientOriginalExtension();
+            $filepath = 'produk/' . $filename;
+            Storage::disk('s3')->put($filepath, file_get_contents($photo));
 
             $produk = new Produk();
             $produk->id_user = Auth::user()->id;
@@ -69,7 +70,7 @@ class ProdukController extends Controller
             $produk->sisi = $request->sisi;
             $produk->keterangan = $request->keterangan;
             $produk->harga_sewa = $request->harga_sewa;
-            $produk->foto = $path;
+            $produk->foto = Storage::disk('s3')->url($filepath, $filename);
             $produk->alamat = $request->alamat;
             $produk->status = true;
             $produk->save();
@@ -79,6 +80,7 @@ class ProdukController extends Controller
                 'status' => true,
                 'data' => new ProdukResource($produk)
             ]);
+
         }catch (\Exception $exception){
             return response()->json([
                 'message' => $exception->getMessage(),
@@ -116,10 +118,10 @@ class ProdukController extends Controller
             $produk->keterangan = $request->keterangan;
             $photo = $request->file('foto');
             if ($photo){
-                $path = time() . '.' . $photo->getClientOriginalExtension();
-                $destinationPath = public_path('uploads/produk');
-                $photo->move($destinationPath, $path);
-                $produk->foto = $path;
+                $filename = time() . '.' . $photo->getClientOriginalExtension();
+                $filepath = 'car/' . $filename;
+                Storage::disk('s3')->put($filepath, file_get_contents($photo));
+                $produk->photo = Storage::disk('s3')->url($filepath, $filename);
             }else{
                 $produk->foto = $produk->foto;
             }
