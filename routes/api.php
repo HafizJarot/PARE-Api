@@ -35,3 +35,4 @@ Route::post('produk/{id}/update', 'Api\Pemilik\ProdukController@update');
 Route::get('produk/{id}/delete','Api\Pemilik\ProdukController@delete');
 
 Route::post('order/store', 'Api\Penyewa\OrderController@store');
+Route::get('order/penyewa', 'Api\Penyewa\OrderController@myOrders');

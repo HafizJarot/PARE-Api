@@ -49,4 +49,15 @@ class OrderController extends Controller
             'data'=> new OrderResource($order)
         ]);
     }
+
+    public function myOrders()
+    {
+        $orders = Order::where('id_penyewa', Auth::user()->id)->get();
+
+        return response()->json([
+            'message' => 'successfully get my orders',
+            'status' => true,
+            'data' => $orders
+        ]);
+    }
 }
