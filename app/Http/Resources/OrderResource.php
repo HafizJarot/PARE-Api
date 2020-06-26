@@ -17,9 +17,6 @@ class OrderResource extends JsonResource
     {
         return [
             "id"                    => $this->id,
-            "id_penyewa"            => $this->id_penyewa,
-            "id_pemilik"            => $this->id_pemilik,
-            "id_produk"             => $this->id_produk,
             "harga"                 => $this->harga,
             "total_harga"           => $this->total_harga,
             "tanggal_mulai_sewa"    => Carbon::parse($this->tanggal_mulai_sewa)->format('d-m-Y'),
@@ -27,6 +24,9 @@ class OrderResource extends JsonResource
             "verifikasi"            => $this->verifikasi,
             "status"                => $this->status,
             "snap"                  => $this->snap,
+            "penyewa"            => new UserResource($this->penyewa),
+            "pemilik"            => new UserResource($this->pemilik),
+            "produk"             => new ProdukResource($this->produk),
         ];
     }
 }
