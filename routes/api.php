@@ -21,7 +21,7 @@ Route::post('user/login/pemilik','Api\Auth\LoginController@loginPemilik');
 Route::post('user/login/penyewa','Api\Auth\LoginController@loginPenyewa');
 Route::get('user/email/verify/{id}', 'Api\Auth\VerificationController@verify')->name('api.verification.verify');
 Route::get('user/email/resend', 'Api\Auth\VerificationController@resend')->name('api.verification.resend');
-Route::get('user/profile', 'Ap\Auth\Penyewa\UserController@profile');
+Route::get('user/profile', 'Api\Penyewa\UserController@profile');
 
 
 Route::get('produk/all','Api\Penyewa\ProdukController@index');
