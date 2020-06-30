@@ -17,7 +17,7 @@
             <li class="header">MAIN NAVIGATION</li>
             <li class="treeview active">
             <li>
-                <a href="#">
+                <a href="{{ route('dashboard') }}">
                     <i class="fa fa-home"></i> <span>Dashboard</span>
                 </a>
             </li>
@@ -35,7 +35,7 @@
                 </ul>
             </li>--}}
             <li>
-                <a href="{{route('users.index')}}">
+                <a href="{{route('user.index')}}">
                     <i class="fa fa-users"></i> <span>Users</span>
                 </a>
             </li>

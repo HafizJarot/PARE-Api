@@ -19,7 +19,8 @@ Route::get('dashboard', 'superadmin\DashboardController@index')->name('dashboard
 
 Route::resource('/notif', 'superadmin\NotifikasiPemilikReklameController')->only('index');
 Route::get('/notif/{id}', 'superadmin\NotifikasiPemilikReklameController@update')->name('notif.update');
-Route::resource('/users', 'superadmin\PemilikReklameController');
+Route::get('/user', 'superadmin\PemilikReklameController@index')->name('user.index');
+Route::get('/user/{id}', 'superadmin\PemilikReklameController@show')->name('user.show');
 
 
 //Auth::routes();

@@ -56,7 +56,8 @@ class PemilikReklameController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('pages.admin.users.show', compact('user'));
     }
 
     /**

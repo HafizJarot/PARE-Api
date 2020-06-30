@@ -4,11 +4,6 @@
         <h1>
             Data Tables
         </h1>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Tables</a></li>
-            <li class="breadcrumb-item active">Data tables</li>
-        </ol>
     </section>
 
     <!-- Main content -->
@@ -50,8 +45,7 @@
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$user->no_izin}}</td>
-                                        <td>{{$user->nama_perusahaan}}</td>
-                                        <td>{{$user->nama}}</td>
+                                        <td><a href="{{route('user.show', $user->id)}}">{{$user->nama_perusahaan}}</a></td>
                                         <td>{{$user->alamat}}</td>
                                         <td>{{$user->no_telp}}</td>
                                         <td>{{$user->email}}</td>
