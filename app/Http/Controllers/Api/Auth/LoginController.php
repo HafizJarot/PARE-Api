@@ -15,6 +15,40 @@ class LoginController extends Controller
         $this->middleware('guest:user')->except('logout');
     }
 
+    public function login(Request $request)
+    {
+        $this->validate($request,[
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        $credentials = [
+            'email' => $request-> email,
+            'password' => $request-> password
+        ];
+
+        if (Auth::guard('user')->attempt($credentials)){
+            $user = Auth::guard('user')->user();
+            if ($request->role == $user->role){
+                return response()->json([
+                    'status' => true,
+                    'message' => 'Anda berhasil login',
+                    'data' => $user,
+                ], 200);
+            }else{
+                return response()->json([
+                    'status' => false,
+                    'message' => 'verifikasi email anda dahulu',
+                ], 401);
+            }
+        }else{
+            return response()->json([
+                'status' => false,
+                'massage' => 'Gagal login'
+            ], 401);
+        }
+    }
+
     public function loginPenyewa(Request $request)
     {
         $this->validate($request,[
