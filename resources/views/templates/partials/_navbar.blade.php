@@ -23,7 +23,7 @@
                     <ul class="dropdown-menu scale-up">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="{{asset('assets/images/user2-160x160.jpg')}}" class="rounded float-left" alt="User Image">
+                            <img src="{{asset('assets/images/profile.webp')}}" class="rounded float-left" alt="User Image">
 
                             <p>
                                 PARE.Mobile
