@@ -2,7 +2,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Data Tables
+            Data All Users
         </h1>
     </section>
 

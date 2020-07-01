@@ -4,7 +4,7 @@
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>F</b></span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Fox</b>Admin</span>
+        <span class="logo-lg"><b>Super Admin</b>PARE.Mobile</span>
     </a>
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top">
@@ -26,7 +26,7 @@
                             <img src="{{asset('assets/images/user2-160x160.jpg')}}" class="rounded float-left" alt="User Image">
 
                             <p>
-                                PARE Template
+                                PARE.Mobile
                                 <small>Since November . 1997</small>
                             </p>
                         </li>
