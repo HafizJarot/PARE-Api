@@ -17,8 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('user/register/penyewa','Api\Auth\RegisterController@registerPenyewa');
 Route::post('user/register/pemilik','Api\Auth\RegisterController@registerPemilik');
-Route::post('user/login/pemilik','Api\Auth\LoginController@loginPemilik');
-Route::post('user/login/penyewa','Api\Auth\LoginController@loginPenyewa');
+
 Route::post('user/login','Api\Auth\LoginController@login');
 
 Route::get('user/email/verify/{id}', 'Api\Auth\VerificationController@verify')->name('api.verification.verify');
@@ -29,12 +28,12 @@ Route::get('user/profile', 'Api\Penyewa\UserController@profile');
 Route::get('produk/all','Api\Penyewa\ProdukController@index');
 Route::post('produk/search','Api\Penyewa\ProdukController@search');
 
-Route::post('order','Api\Penyewa\OrderController@order');
-
 Route::get('produk','Api\Pemilik\ProdukController@index');
 Route::post('produk/store', 'Api\Pemilik\ProdukController@store');
 Route::post('produk/{id}/update', 'Api\Pemilik\ProdukController@update');
 Route::get('produk/{id}/delete','Api\Pemilik\ProdukController@delete');
 
+//Route::post('order','Api\Penyewa\OrderController@order');
 Route::post('order/store', 'Api\Penyewa\OrderController@store');
 Route::get('order/penyewa', 'Api\Penyewa\OrderController@myOrders');
+Route::get('order/pemilik',' Api\Pemilik\OrderController@myOrders');

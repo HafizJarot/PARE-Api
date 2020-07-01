@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('dashboard', 'superadmin\DashboardController@index')->name('dashboard');
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::resource('/notif', 'superadmin\NotifikasiPemilikReklameController')->only('index');
 Route::get('/notif/{id}', 'superadmin\NotifikasiPemilikReklameController@update')->name('notif.update');

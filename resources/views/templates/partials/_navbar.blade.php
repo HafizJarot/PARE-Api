@@ -1,6 +1,6 @@
 <header class="main-header">
     <!-- Logo -->
-    <a href="index.html" class="logo">
+    <a href="{{route('dashboard')}}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b></b></span>
         <!-- logo for regular state and mobile devices -->
@@ -36,7 +36,7 @@
                                 <a href="#" class="btn btn-block btn-primary">Profile</a>
                             </div>
                             <div class="pull-right">
-                                <a href="#" class="btn btn-block btn-danger">Sign out</a>
+                                <a href="{{ route('logout') }}" class="btn btn-block btn-danger">Sign out</a>
                             </div>
                         </li>
                     </ul>
