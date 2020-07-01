@@ -2,7 +2,7 @@
     <!-- Logo -->
     <a href="index.html" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>F</b></span>
+        <span class="logo-mini"><b></b></span>
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg"><b>Super</b>Admin</span>
     </a>
