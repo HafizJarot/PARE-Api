@@ -2,13 +2,8 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Data Tables
         </h1>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Tables</a></li>
-            <li class="breadcrumb-item active">Data tables</li>
-        </ol>
+
     </section>
 
     <!-- Main content -->
@@ -17,7 +12,7 @@
             <div class="col-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Responsive Hover Table</h3>
+                        <h3 class="box-title">Notification of All Users</h3>
 
                         <div class="box-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">

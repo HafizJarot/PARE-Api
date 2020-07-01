@@ -6,7 +6,7 @@
     <meta name="author" content="">
     <link rel="icon" href="images/favicon.ico">
 
-    <title>Fox Admin - Dashboard</title>
+    <title>Super Admin - PARE.Mobile</title>
 
     <!-- Bootstrap v4.1.3.stable -->
     <link rel="stylesheet" href="{{asset('assets/assets/vendor_components/bootstrap/dist/css/bootstrap.min.css')}}">
