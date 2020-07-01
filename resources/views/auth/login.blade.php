@@ -88,7 +88,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{{ asset('assets/images/favicon.ico') }}">
 
-    <title>Fox Admin - Log in </title>
+    <title>Super Admin - PARE.Mobile - Log in </title>
 
     <!-- Bootstrap v4.1.3.stable -->
     <link rel="stylesheet" href="{{asset('assets/assets/vendor_components/bootstrap/dist/css/bootstrap.min.css') }}">
@@ -120,7 +120,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="../../index.html"><b>Fox</b>Admin</a>
+        <a href="../../index.html"><b>Super</b>Admin</a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
