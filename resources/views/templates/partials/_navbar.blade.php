@@ -18,7 +18,7 @@
                 <!-- User Account -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="{{asset('assets/images/icons8-test-account-100.png')}}" class="user-image rounded-circle" alt="User Image">
+                        <img src="{{asset('assets/images/profile.webp')}}" class="user-image rounded-circle" alt="User Image">
                     </a>
                     <ul class="dropdown-menu scale-up">
                         <!-- User image -->
