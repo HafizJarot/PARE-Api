@@ -4,7 +4,7 @@
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>F</b></span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Super Admin</b>PARE.Mobile</span>
+        <span class="logo-lg"><b>Super</b>Admin</span>
     </a>
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top">
@@ -18,7 +18,7 @@
                 <!-- User Account -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="{{asset('assets/images/user2-160x160.jpg')}}" class="user-image rounded-circle" alt="User Image">
+                        <img src="{{asset('assets/images/icons8-test-account-100.png')}}" class="user-image rounded-circle" alt="User Image">
                     </a>
                     <ul class="dropdown-menu scale-up">
                         <!-- User image -->

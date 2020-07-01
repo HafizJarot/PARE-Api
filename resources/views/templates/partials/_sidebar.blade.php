@@ -4,7 +4,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="image float-left">
-                <img src="{{asset('assets/images/user2-160x160.jpg')}}" class="rounded" alt="User Image">
+                <img src="{{asset('assets/images/icons8-test-account-100.png')}}" class="rounded" alt="User Image">
             </div>
             <div class="info float-left">
                 <p>PARE.Mobile</p>
