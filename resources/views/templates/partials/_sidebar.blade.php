@@ -7,7 +7,7 @@
                 <img src="{{asset('assets/images/user2-160x160.jpg')}}" class="rounded" alt="User Image">
             </div>
             <div class="info float-left">
-                <p>PARE Template</p>
+                <p>PARE.Mobile</p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
@@ -18,7 +18,7 @@
             <li class="treeview active">
             <li>
                 <a href="{{ route('dashboard') }}">
-                    <i class="fa fa-home"></i> <span>Dashboard</span>
+                    <i class="fa fa-home"></i> <span>Home</span>
                 </a>
             </li>
            {{--     <a href="#">
@@ -41,7 +41,7 @@
             </li>
             <li>
                 <a href="{{route('notif.index')}}">
-                    <i class="fa fa-bell"></i> <span>Notifikasi</span>
+                    <i class="fa fa-bell"></i> <span>Notification</span>
                 </a>
             </li>
 
