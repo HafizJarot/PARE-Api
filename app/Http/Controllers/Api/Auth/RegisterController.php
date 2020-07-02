@@ -52,14 +52,14 @@ class RegisterController extends Controller
             'email'             => 'required|email|unique:users',
             'password'          => 'required',
             'alamat'            => 'required',
-            'no_telepon'        => 'required'
+            'no_hp'        => 'required'
         ]);
 
         $user = new User();
         $user->no_izin = $request->no_izin;
         $user->nama_perusahaan = $request->nama_perusahaan;
         $user->email = $request->email;
-        $user->no_telepon = $request->no_telepon;
+        $user->no_hp = $request->no_hp;
         $user->alamat = $request->alamat;
         $user->role = true;
         $user->password = Hash::make($request->password);
