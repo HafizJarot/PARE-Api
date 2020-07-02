@@ -15,7 +15,7 @@
         <!-- sidebar menu -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="treeview active">
+            <li class="treeview">
             <li>
                 <a href="{{ route('dashboard') }}">
                     <i class="fa fa-home"></i> <span>Home</span>
@@ -34,7 +34,7 @@
                     <li><a href="index3.html"><i class="fa fa-circle-o"></i> Dashboard 3</a></li>
                 </ul>
             </li>--}}
-            <li>
+            <li class="active">
                 <a href="{{route('user.index')}}">
                     <i class="fa fa-users"></i> <span>Users</span>
                 </a>
