@@ -47,7 +47,7 @@
                                         <td>{{$user->no_izin}}</td>
                                         <td><a href="{{route('user.show', $user->id)}}">{{$user->nama_perusahaan}}</a></td>
                                         <td>{{$user->alamat}}</td>
-                                        <td>{{$user->no_telp}}</td>
+                                        <td>{{$user->no_hp}}</td>
                                         <td>{{$user->email}}</td>
 
                                     </tr>
