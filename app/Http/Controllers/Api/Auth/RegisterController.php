@@ -50,13 +50,17 @@ class RegisterController extends Controller
             'no_izin'           => 'required',
             'nama_perusahaan'   => 'required',
             'email'             => 'required|email|unique:users',
-            'password'          => 'required'
+            'password'          => 'required',
+            'alamat'            => 'required',
+            'no_telepon'        => 'required'
         ]);
 
         $user = new User();
         $user->no_izin = $request->no_izin;
         $user->nama_perusahaan = $request->nama_perusahaan;
         $user->email = $request->email;
+        $user->no_telepon = $request->no_telepon;
+        $user->alamat = $request->alamat;
         $user->role = true;
         $user->password = Hash::make($request->password);
         $user->api_token = Str::random(80);
