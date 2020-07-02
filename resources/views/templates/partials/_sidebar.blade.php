@@ -16,7 +16,7 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
             <li class="treeview">
-            <li class="{{ request()->is('/dashboard') ? 'active' : '' }}">
+            <li class="{{ request()->is('dashboard') ? 'active' : '' }}">
                 <a href="{{ route('dashboard') }}">
                     <i class="fa fa-home"></i> <span>Home</span>
                 </a>
@@ -34,12 +34,12 @@
                     <li><a href="index3.html"><i class="fa fa-circle-o"></i> Dashboard 3</a></li>
                 </ul>
             </li>--}}
-            <li class="{{ request()->is('/user') ? 'active' : '' }}">
+            <li class="{{ request()->is('user') ? 'active' : '' }}">
                 <a href="{{route('user.index')}}">
                     <i class="fa fa-users"></i> <span>Users</span>
                 </a>
             </li>
-            <li class="{{ request()->is('/notif') ? 'active' : '' }}">
+            <li class="{{ request()->is('notif') ? 'active' : '' }}">
                 <a href="{{route('notif.index')}}">
                     <i class="fa fa-bell"></i> <span>Notification</span>
                 </a>
