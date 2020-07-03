@@ -44,6 +44,11 @@
                     <i class="fa fa-bell"></i> <span>Notification</span>
                 </a>
             </li>
+            <li class="{{--{{ request()->is('notif') ? 'active' : '' }}--}}">
+                <a href="{{--{{route('notif.index')}}--}}">
+                    <i class="fa fa-money"></i> <span>Transaction</span>
+                </a>
+            </li>
 
         </ul>
     </section>
