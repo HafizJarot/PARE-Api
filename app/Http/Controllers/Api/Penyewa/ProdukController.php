@@ -52,23 +52,32 @@ class ProdukController extends Controller
         $tanggal_mulai = $request->tanggal_mulai;
         $tanggal_selesai = Carbon::parse($tanggal_mulai)->addMonths($request->tanggal_selesai);
 
-        $orders = Order::whereDate('tanggal_mulai_sewa', '>=', $tanggal_mulai)
-            ->whereDate('tanggal_mulai_sewa', '<=', $tanggal_selesai)->get();
+        $tgl_mulai = Carbon::parse($request->tanggal_mulai)->format('d');
+        $now = Carbon::now()->format('d');
 
-        $produks = Produk::where('status', true)->get();
+        if ($tgl_mulai < $now){
+            return response()->json([
+                'message' => 'tidak ada papan reklame pada hari kemaren',
+                'status' => false
+            ]);
+        }else{
+            $orders = Order::whereDate('tanggal_mulai_sewa', '>=', $tanggal_mulai)
+                ->whereDate('tanggal_mulai_sewa', '<=', $tanggal_selesai)->get();
+            $produks = Produk::where('status', true)->get();
 
-        $results = [];
-        foreach ($produks as $key => $produk){
-            if (isset($orders[$key]->id_produk) != $produk->id){
-                array_push($results, $produk);
+            $results = [];
+            foreach ($produks as $key => $produk){
+                if (isset($orders[$key]->id_produk) != $produk->id){
+                    array_push($results, $produk);
+                }
             }
-        }
 
-        return response()->json([
-            'message' => 'berhasil',
-            'status' => true,
-            'data' => ProdukResource::collection($results)
-        ]);
+            return response()->json([
+                'message' => 'berhasil',
+                'status' => true,
+                'data' => ProdukResource::collection($results)
+            ]);
+        }
     }
 
 }
