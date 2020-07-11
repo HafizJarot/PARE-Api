@@ -33,8 +33,11 @@ Route::post('produk/store', 'Api\Pemilik\ProdukController@store');
 Route::post('produk/{id}/update', 'Api\Pemilik\ProdukController@update');
 Route::get('produk/{id}/delete','Api\Pemilik\ProdukController@delete');
 
-Route::get('order/pemilik','Api\Pemilik\OrderController@myOrders');
-
 //Route::post('order','Api\Penyewa\OrderControllerq@order');
 Route::post('order/store', 'Api\Penyewa\OrderController@store');
+Route::post('snap', 'Api\Penyewa\OrderController@snapToken');
+Route::post('snap/charge', 'Api\Penyewa\OrderController@snapToken');
+
 Route::get('order/penyewa', 'Api\Penyewa\OrderController@myOrders');
+
+Route::get('order/pemilik','Api\Pemilik\OrderController@myOrders');

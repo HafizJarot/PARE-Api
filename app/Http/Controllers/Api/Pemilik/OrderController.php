@@ -7,6 +7,8 @@ use App\Http\Resources\OrderResource;
 use App\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Midtrans\Snap;
+use App\Http\Controllers\Midtrans\Config;
 
 class OrderController extends Controller
 {
