@@ -22,7 +22,8 @@ class RegisterController extends Controller
         $this->validate($request,[
             'nama' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required'
+            'password' => 'required',
+            'alamat' => 'required'
         ]);
 
         $user = new User();
@@ -31,6 +32,7 @@ class RegisterController extends Controller
         $user->role = false;
         $user->password = Hash::make($request->password);
         $user->api_token = Str::random(80);
+        $user->alamat = $request->alamat;
         $user->save();
         $user->sendApiEmailVerificationNotification();
         $message = "Cek Email Anda, Verifikasi Dahulu";
@@ -52,7 +54,7 @@ class RegisterController extends Controller
             'email'             => 'required|email|unique:users',
             'password'          => 'required',
             'alamat'            => 'required',
-            'no_hp'        => 'required'
+            'no_hp'             => 'required'
         ]);
 
         $user = new User();
