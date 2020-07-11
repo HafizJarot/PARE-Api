@@ -18,7 +18,7 @@ class OrderController extends Controller
     public function myOrders()
     {
         $user = Auth::guard('api')->user();
-        $orders = Order::where('id_penyewa', $user->id)->get();
+        $orders = Order::where('id_pemilik', $user->id)->where('role', true)->get();
 
         return response()->json([
             'messsage' => 'successfully get my order',
