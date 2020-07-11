@@ -33,7 +33,8 @@ Route::post('produk/store', 'Api\Pemilik\ProdukController@store');
 Route::post('produk/{id}/update', 'Api\Pemilik\ProdukController@update');
 Route::get('produk/{id}/delete','Api\Pemilik\ProdukController@delete');
 
-//Route::post('order','Api\Penyewa\OrderController@order');
+Route::get('order/pemilik','Api\Pemilik\OrderController@myOrders');
+
+//Route::post('order','Api\Penyewa\OrderControllerq@order');
 Route::post('order/store', 'Api\Penyewa\OrderController@store');
 Route::get('order/penyewa', 'Api\Penyewa\OrderController@myOrders');
-Route::get('order/pemilik',' Api\Pemilik\OrderController@myOrders');

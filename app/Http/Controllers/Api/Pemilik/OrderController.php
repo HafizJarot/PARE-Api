@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Api\Pemilik;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\OrderResource;
 use App\Order;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,15 +15,15 @@ class OrderController extends Controller
         $this->middleware('auth:api');
     }
 
-    public function myOrders()
-    {
-        $user = Auth::guard('api')->user();
-        $orders = Order::where('id_pemilik', $user->id)->where('role', true)->get();
+    public function myOrders(){
+        $auth = Auth::guard('api')->user();
+
+        $orders = Order::where('id_pemilik', $auth->id)->get();
 
         return response()->json([
-            'messsage' => 'successfully get my order',
+            'message' => 'successfully get order by pemilik',
             'status' => true,
-            'data' => $orders
+            'data' => OrderResource::collection($orders)
         ]);
     }
 }
