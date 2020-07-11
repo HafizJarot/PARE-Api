@@ -19,12 +19,16 @@ class RegisterController extends Controller
 
     public function registerPenyewa(Request $request){
 
-        $this->validate($request,[
+        $validator = Validator::make($request->all(), [
             'nama' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required',
             'alamat' => 'required'
         ]);
+
+        if ($validator->fails()){
+            return response()->json(['message' => $validator->errors(), 'status' => false, 'data' => (object) []]);
+        }
 
         $user = new User();
         $user->nama = $request->nama;
@@ -47,15 +51,18 @@ class RegisterController extends Controller
 
     public function registerPemilik(Request $request){
 
-
-        $this->validate($request,[
-            'no_izin'           => 'required',
+        $validator = Validator::make($request->all(), [
+            'no_izin'           => 'required|unique:users',
             'nama_perusahaan'   => 'required',
             'email'             => 'required|email|unique:users',
             'password'          => 'required',
             'alamat'            => 'required',
             'no_hp'             => 'required'
         ]);
+
+        if ($validator->fails()){
+            return response()->json(['message' => $validator->errors(), 'status' => false, 'data' => (object) []]);
+        }
 
         $user = new User();
         $user->no_izin = $request->no_izin;
