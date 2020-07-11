@@ -7,6 +7,7 @@ use App\Http\Controllers\Midtrans\Config;
 use App\Http\Controllers\Midtrans\Snap;
 use App\Http\Resources\OrderResource;
 use App\Order;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -61,6 +62,7 @@ class OrderController extends Controller
 
         $item_details = [];
         foreach ($orders as $val) {
+            $penyewa = User::where('id', $val['id'])->first();
             $item_details[] = [
                 'id' => $val['id'],
                 'price' => $val['price'],
@@ -75,8 +77,8 @@ class OrderController extends Controller
             ],
             'item_details' => $item_details,
             'customer_details' => [
-                'first_name' => 'a',
-                'email' => 'penyewa@gmail.com',
+                'first_name' => $penyewa->nama,
+                'email' => $penyewa->email,
                 'telephone' => '0983784732',
             ],
         ];
