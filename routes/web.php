@@ -15,6 +15,10 @@ Route::get('/', function () {
     return redirect()->route('dashboard');
 });
 
+Route::post('/finish', function(){
+    return redirect()->route('welcome');
+})->name('donation.finish');
+
 Route::get('dashboard', 'superadmin\DashboardController@index')->name('dashboard');
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 

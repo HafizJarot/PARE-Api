@@ -16,7 +16,7 @@ class OrderController extends Controller
 
     public function __construct()
     {
-        Config::$serverKey = 'SB-Mid-server-lgheMLSAsWyuFmE1FmP7L2K1';
+        Config::$serverKey = 'SB-Mid-server-zNbcUa1_wMHbzGUVHRbZshNE';
         Config::$isSanitized = true;
         Config::$is3ds = true;
         $this->middleware('auth:api')->except('snapToken');
