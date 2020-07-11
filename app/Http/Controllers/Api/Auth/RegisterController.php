@@ -27,7 +27,7 @@ class RegisterController extends Controller
         ]);
 
         if ($validator->fails()){
-            return response()->json(['message' => $validator->errors(), 'status' => false, 'data' => (object) []]);
+            return response()->json(['message' => $validator->errors(), 'status' => false]);
         }
 
         $user = new User();
@@ -61,7 +61,7 @@ class RegisterController extends Controller
         ]);
 
         if ($validator->fails()){
-            return response()->json(['message' => $validator->errors(), 'status' => false, 'data' => (object) []]);
+            return response()->json(['message' => $validator->errors(), 'status' => false]);
         }
 
         $user = new User();
