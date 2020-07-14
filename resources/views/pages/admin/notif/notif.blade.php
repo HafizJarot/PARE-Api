@@ -42,23 +42,23 @@
                                 </thead>
                                 <tbody>
                                 @foreach($notifs as $notif)
-                                <tr>
-                                    <td>{{$loop->iteration}}</td>
-                                    <td>{{$notif->no_izin}}</td>
-                                    <td>{{$notif->nama_perusahaan}}</td>
-                                    <td>{{$notif->alamat}}</td>
-                                    <td>{{$notif->no_telp}}</td>
-                                    <td>{{$notif->email}}</td>
-                                    <td>
-                                        <a href="{{route('notif.update',$notif->id)}}" class="btn btn-success">
-                                            <i class="fa fa-check"></i>
-                                        </a>
-                                        <a href="#" class="btn btn-danger">
-                                            <i class="fa fa-times-rectangle"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                    @endforeach
+                                    <tr>
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>{{$notif->no_izin}}</td>
+                                        <td>{{$notif->nama_perusahaan}}</td>
+                                        <td>{{$notif->alamat}}</td>
+                                        <td>{{$notif->no_telp}}</td>
+                                        <td>{{$notif->email}}</td>
+                                        <td>
+                                            <a href="{{route('notif.update',$notif->id)}}" class="btn btn-success">
+                                                <i class="fa fa-check"></i>
+                                            </a>
+                                            <a href="#" class="btn btn-danger">
+                                                <i class="fa fa-times-rectangle"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

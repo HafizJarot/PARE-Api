@@ -57,7 +57,7 @@ class RegisterController extends Controller
             'email'             => 'required|email|unique:users',
             'password'          => 'required',
             'alamat'            => 'required',
-            'no_hp'             => 'required'
+            'no_hp'             => 'required',
         ]);
 
         if ($validator->fails()){
@@ -73,6 +73,7 @@ class RegisterController extends Controller
         $user->role = true;
         $user->password = Hash::make($request->password);
         $user->api_token = Str::random(80);
+        $user->status = false;
         $user->save();
         //$user->sendApiEmailVerificationNotification();
         //$message = "Cek Email Anda, Verifikasi Dahulu";
