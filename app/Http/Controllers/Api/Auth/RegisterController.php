@@ -70,6 +70,7 @@ class RegisterController extends Controller
         $user->email = $request->email;
         $user->no_hp = $request->no_hp;
         $user->alamat = $request->alamat;
+        $user->fcm_token = $request->fcm_token;
         $user->role = true;
         $user->password = Hash::make($request->password);
         $user->api_token = Str::random(80);

@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf5f2d8f-deba-4097-90e8-99f8c7eddf95" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/views/pages/admin/users/penyewa/show.blade.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/views/pages/admin/users/penyewa/users.blade.php" />
-      <change beforePath="$PROJECT_DIR$/.idea/papanreklame.iml" afterPath="$PROJECT_DIR$/.idea/papanreklame.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/superadmin/PemilikReklameController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/superadmin/UserController.php" />
-      <change beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/users/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/admin/users/pemilik/show.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/users/users.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/admin/users/pemilik/users.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/templates/partials/_sidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/templates/partials/_sidebar.blade.php" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -97,11 +87,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2020_07_15_184228_add_column_user.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2020_07_15_184228_add_column_user.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2020_07_15_184228_add_column_user.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="16" column="71" lean-forward="true" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="71" />
+            <state relative-caret-position="306">
+              <caret line="20" column="60" lean-forward="true" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegisterController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="72" column="46" lean-forward="true" selection-start-line="72" selection-start-column="46" selection-end-line="72" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -175,13 +175,13 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Pemilik/OrderController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Penyewa/OrderController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/superadmin/NotifikasiPemilikReklameController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/admin/notif/notif.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/superadmin/UserController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/templates/partials/_sidebar.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_07_15_184228_add_column_user.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php" />
       </list>
     </option>
   </component>
@@ -348,18 +348,24 @@
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Api" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="papanreklame" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Api" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Auth" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="papanreklame" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="superadmin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="papanreklame" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="papanreklame" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="migrations" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
@@ -453,15 +459,16 @@
       <workItem from="1594381166154" duration="15000" />
       <workItem from="1594464804030" duration="13318000" />
       <workItem from="1594714742637" duration="3425000" />
-      <workItem from="1594801290899" duration="10891000" />
+      <workItem from="1594801290899" duration="11129000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157492000" />
+    <option name="totallyTimeSpent" value="157730000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23373677" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -472,7 +479,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24019608" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24019608" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -752,14 +759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="75" column="30" lean-forward="false" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -871,14 +870,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/superadmin/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -941,8 +932,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2020_07_15_184228_add_column_user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" column="71" lean-forward="true" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="71" />
+        <state relative-caret-position="306">
+          <caret line="20" column="60" lean-forward="true" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/superadmin/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="72" column="46" lean-forward="true" selection-start-line="72" selection-start-column="46" selection-end-line="72" selection-end-column="46" />
           <folding />
         </state>
       </provider>
