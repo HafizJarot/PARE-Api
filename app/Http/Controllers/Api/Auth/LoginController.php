@@ -29,7 +29,7 @@ class LoginController extends Controller
 
         if (Auth::guard('user')->attempt($credentials)){
             $user = Auth::guard('user')->user();
-            if ($request->role == $user->role){
+            if ($request->role == $user->role && $request->status == true){
                 return response()->json([
                     'status' => true,
                     'message' => 'Anda berhasil login',
@@ -44,7 +44,7 @@ class LoginController extends Controller
         }else{
             return response()->json([
                 'status' => false,
-                'massage' => 'Gagal login'
+                'massage' => 'masukkan email dan password yang benar'
             ], 401);
         }
     }
