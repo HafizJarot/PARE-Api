@@ -50,12 +50,8 @@
                                         <td>{{$notif->no_telp}}</td>
                                         <td>{{$notif->email}}</td>
                                         <td>
-                                            <a href="{{route('notif.update',$notif->id)}}" class="btn btn-success">
-                                                <i class="fa fa-check"></i>
-                                            </a>
-                                            <a href="#" class="btn btn-danger">
-                                                <i class="fa fa-times-rectangle"></i>
-                                            </a>
+                                            <a href="{{route('notif.update',$notif->id)}}" class="btn btn-success"><i class="fa fa-check"></i></a>
+                                            <a href="#" class="btn btn-danger"><i class="fa fa-times-rectangle"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach

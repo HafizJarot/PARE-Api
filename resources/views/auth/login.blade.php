@@ -149,18 +149,18 @@
                 <span class="ion ion-locked form-control-feedback"></span>
             </div>
             <div class="row">
-                <div class="col-6">
-                    <div class="checkbox">
-                        <input type="checkbox" id="basic_checkbox_1" >
-                        <label for="basic_checkbox_1">Remember Me</label>
-                    </div>
-                </div>
-                <!-- /.col -->
-                <div class="col-6">
-                    <div class="fog-pwd">
-                        <a href="javascript:void(0)"><i class="ion ion-locked"></i> Forgot pwd?</a><br>
-                    </div>
-                </div>
+                {{--<div class="col-6">--}}
+                    {{--<div class="checkbox">--}}
+                        {{--<input type="checkbox" id="basic_checkbox_1" >--}}
+                        {{--<label for="basic_checkbox_1">Remember Me</label>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<!-- /.col -->--}}
+                {{--<div class="col-6">--}}
+                    {{--<div class="fog-pwd">--}}
+                        {{--<a href="javascript:void(0)"><i class="ion ion-locked"></i> Forgot pwd?</a><br>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
                 <!-- /.col -->
                 <div class="col-12 text-center">
                     <button type="submit" class="btn btn-info btn-block btn-flat margin-top-10">SIGN IN</button>
@@ -169,11 +169,6 @@
             </div>
         </form>
 
-
-
-        <div class="margin-top-30 text-center">
-            <p>Don't have an account? <a href="register.html" class="text-info m-l-5">Sign Up</a></p>
-        </div>
 
     </div>
     <!-- /.login-box-body -->
