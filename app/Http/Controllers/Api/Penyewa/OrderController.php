@@ -11,6 +11,10 @@ use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use LaravelFCM\Message\OptionsBuilder;
+use LaravelFCM\Message\PayloadDataBuilder;
+use LaravelFCM\Message\PayloadNotificationBuilder;
+use FCM;
 
 class OrderController extends Controller
 {
@@ -48,6 +52,24 @@ class OrderController extends Controller
         $order->verifikasi = 'menunggu di konfirmasi';
         $order->status = 'pending';
         $order->save();
+
+        $optionBuilder = new OptionsBuilder();
+        $optionBuilder->setTimeToLive(60*20);
+
+        $notificationBuilder = new PayloadNotificationBuilder('KONTOLL');
+        $notificationBuilder->setBody('KONTOOOOOOOLLLLLLLLLLLLLLLLLLLLL')
+            ->setSound('default');
+
+        $dataBuilder = new PayloadDataBuilder();
+        $dataBuilder->addData(['a_data' => 'my_data']);
+
+        $option = $optionBuilder->build();
+        $notification = $notificationBuilder->build();
+        $data = $dataBuilder->build();
+
+        $token = $order->pemilik->fcm_token;
+
+        FCM::sendTo($token, $option, $notification, $data);
 
         return response()->json([
             'message'=> 'Orderan berhasil',
