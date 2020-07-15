@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use LaravelFCM\Message\OptionsBuilder;
 use LaravelFCM\Message\PayloadDataBuilder;
 use LaravelFCM\Message\PayloadNotificationBuilder;
-use FCM;
+use LaravelFCM\Facades\FCM as FacadesFCM;
 
 class OrderController extends Controller
 {
@@ -54,27 +54,26 @@ class OrderController extends Controller
         $order->save();
 
         $optionBuilder = new OptionsBuilder();
-        $optionBuilder->setTimeToLive(60*20);
-
+        $optionBuilder->setTimeToLive(60 * 20);
+        $message = "KONTOLLLL";
         $notificationBuilder = new PayloadNotificationBuilder('KONTOLL');
-        $notificationBuilder->setBody('KONTOOOOOOOLLLLLLLLLLLLLLLLLLLLL')
-            ->setSound('default');
+        $notificationBuilder->setBody($message)->setSound('default');
 
         $dataBuilder = new PayloadDataBuilder();
         $dataBuilder->addData(['a_data' => 'my_data']);
-
         $option = $optionBuilder->build();
         $notification = $notificationBuilder->build();
-        $data = $dataBuilder->build();
+        $_data = $dataBuilder->build();
 
+        // You must change it to get your tokens
         $token = $order->pemilik->fcm_token;
-
-        FCM::sendTo($token, $option, $notification, $data);
+        FacadesFCM::sendTo($token, $option, $notification, $_data);
 
         return response()->json([
             'message'=> 'Orderan berhasil',
             'status'=> true,
             'data'=> new OrderResource($order)
+            //'data' => $order->pemilik->fcm_token
         ]);
     }
 
