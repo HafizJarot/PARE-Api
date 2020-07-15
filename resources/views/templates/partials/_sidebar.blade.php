@@ -21,24 +21,21 @@
                     <i class="fa fa-home"></i> <span>Home</span>
                 </a>
             </li>
-           {{--     <a href="#">
-                    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+
+
+            <li class="treeview {{ request()->is('user/penyewa') || request()->is('user/pemilik') ? 'active' : '' }}">
+                <a href="#">
+                    <i class="fa fa-users"></i> <span>User</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                 </a>
 
                 <ul class="treeview-menu">
-                    <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard 1</a></li>
-                    <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard 2</a></li>
-                    <li><a href="index3.html"><i class="fa fa-circle-o"></i> Dashboard 3</a></li>
+                    <li class=""><a href="{{route('user.pemilik')}}"><i
+                                    class="fa fa-circle-o"></i>Pemilik</a></li>
+                    <li class=""><a href="{{route('user.penyewa')}}"><i
+                                    class="fa fa-circle-o"></i> Penyewa </a></li>
                 </ul>
-            </li>--}}
-            <li class="{{ request()->is('user') ? 'active' : '' }}">
-                <a href="{{route('user.index')}}">
-                    <i class="fa fa-users"></i> <span>Users</span>
-                </a>
             </li>
+
             <li class="{{ request()->is('notif') ? 'active' : '' }}">
                 <a href="{{route('notif.index')}}">
                     <i class="fa fa-bell"></i> <span>Notification</span>

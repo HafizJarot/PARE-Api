@@ -24,8 +24,9 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::resource('/notif', 'superadmin\NotifikasiPemilikReklameController')->only('index');
 Route::get('/notif/{id}', 'superadmin\NotifikasiPemilikReklameController@update')->name('notif.update');
-Route::get('/user', 'superadmin\PemilikReklameController@index')->name('user.index');
-Route::get('/user/{id}', 'superadmin\PemilikReklameController@show')->name('user.show');
+Route::get('/user/pemilik', 'superadmin\UserController@pemilik')->name('user.pemilik');
+Route::get('/user/penyewa', 'superadmin\UserController@penyewa')->name('user.penyewa');
+Route::get('/user/{id}', 'superadmin\UserController@show')->name('user.show');
 
 
 //Auth::routes();

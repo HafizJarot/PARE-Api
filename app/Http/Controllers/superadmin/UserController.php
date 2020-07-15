@@ -7,7 +7,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class PemilikReklameController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,10 +21,16 @@ class PemilikReklameController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function pemilik()
     {
-        $users = User::all()->where('status','1');
-        return view('pages.admin.users.users', compact('users'));
+        $users = User::where('status','1')->where('role', true)->get();
+        return view('pages.admin.users.pemilik.users', compact('users'));
+    }
+
+    public function penyewa()
+    {
+        $users = User::where('status','1')->where('role', false)->get();
+        return view('pages.admin.users.penyewa.users', compact('users'));
     }
 
     /**
