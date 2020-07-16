@@ -15,11 +15,17 @@ Route::get('/', function () {
     return redirect()->route('dashboard');
 });
 
+Route::get('test', function () {
+    event(new App\Events\UserRegisterEvent( 'Someone'));
+    return "Event has been sent!";
+});
+
 Route::post('/finish', function(){
     return redirect()->route('welcome');
 })->name('donation.finish');
 
 Route::get('dashboard', 'superadmin\DashboardController@index')->name('dashboard');
+Route::get('notify', 'superadmin\DashboardController@notify');
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::resource('/notif', 'superadmin\NotifikasiPemilikReklameController')->only('index');

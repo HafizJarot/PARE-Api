@@ -20,4 +20,9 @@ class DashboardController extends Controller
 
         return view('pages.admin.dashboard', compact('penyewa', 'pemilik'));
     }
+
+    public function notify(){
+        $notify = User::where('role', true)->where('status','0')->get(['status']);
+        return $notify;
+    }
 }

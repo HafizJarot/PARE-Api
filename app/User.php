@@ -40,4 +40,8 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         $this->notify(new VerifyApiEmail());
     }
+
+    public function sendNotify($message){
+        return event(new Events\UserRegisterEvent($message));
+    }
 }

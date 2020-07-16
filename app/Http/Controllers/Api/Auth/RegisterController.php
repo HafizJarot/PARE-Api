@@ -76,6 +76,8 @@ class RegisterController extends Controller
         $user->api_token = Str::random(80);
         $user->status = false;
         $user->save();
+
+        $user->sendNotify('success');
         //$user->sendApiEmailVerificationNotification();
         //$message = "Cek Email Anda, Verifikasi Dahulu";
 

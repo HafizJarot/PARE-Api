@@ -33,6 +33,8 @@ class NotifikasiPemilikReklameController extends Controller
         $notif->update(['status' => '1']);
         return redirect()->route('notif.index');
     }
+
+
     public function destroy($id)
     {
         //
