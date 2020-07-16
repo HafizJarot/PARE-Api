@@ -55,8 +55,8 @@ class OrderController extends Controller
 
         $optionBuilder = new OptionsBuilder();
         $optionBuilder->setTimeToLive(60 * 20);
-        $message = "Ada notif check!!!";
-        $notificationBuilder = new PayloadNotificationBuilder('Ada nofif check!');
+        $message = "ada pesanan masuk";
+        $notificationBuilder = new PayloadNotificationBuilder('pare app');
         $notificationBuilder->setBody($message)->setSound('default');
 
         $dataBuilder = new PayloadDataBuilder();
