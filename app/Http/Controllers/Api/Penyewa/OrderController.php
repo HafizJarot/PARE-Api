@@ -55,8 +55,8 @@ class OrderController extends Controller
 
         $optionBuilder = new OptionsBuilder();
         $optionBuilder->setTimeToLive(60 * 20);
-        $message = "KONTOLLLL";
-        $notificationBuilder = new PayloadNotificationBuilder('KONTOLL');
+        $message = "Ada notif check!!!";
+        $notificationBuilder = new PayloadNotificationBuilder('Ada nofif check!');
         $notificationBuilder->setBody($message)->setSound('default');
 
         $dataBuilder = new PayloadDataBuilder();
@@ -100,7 +100,7 @@ class OrderController extends Controller
             'customer_details' => [
                 'first_name' => $penyewa->nama,
                 'email' => $penyewa->email,
-                'telephone' => '0983784732',
+                'telephone' => '08345678910',
             ],
         ];
 
