@@ -53,21 +53,21 @@ class OrderController extends Controller
         $order->status = 'pending';
         $order->save();
 
-//        $optionBuilder = new OptionsBuilder();
-//        $optionBuilder->setTimeToLive(60 * 20);
-//        $message = "ada pesanan masuk";
-//        $notificationBuilder = new PayloadNotificationBuilder('pare app');
-//        $notificationBuilder->setBody($message)->setSound('default');
-//
-//        $dataBuilder = new PayloadDataBuilder();
-//        $dataBuilder->addData(['a_data' => 'my_data']);
-//        $option = $optionBuilder->build();
-//        $notification = $notificationBuilder->build();
-//        $_data = $dataBuilder->build();
-//
-//        // You must change it to get your tokens
-//        $token = $order->pemilik->fcm_token;
-//        FacadesFCM::sendTo($token, $option, $notification, $_data);
+        $optionBuilder = new OptionsBuilder();
+        $optionBuilder->setTimeToLive(60 * 20);
+        $message = "ada pesanan masuk";
+        $notificationBuilder = new PayloadNotificationBuilder('pare app');
+        $notificationBuilder->setBody($message)->setSound('default');
+
+        $dataBuilder = new PayloadDataBuilder();
+        $dataBuilder->addData(['a_data' => 'my_data']);
+        $option = $optionBuilder->build();
+        $notification = $notificationBuilder->build();
+        $_data = $dataBuilder->build();
+
+        // You must change it to get your tokens
+        $token = $order->pemilik->fcm_token;
+        FacadesFCM::sendTo($token, $option, $notification, $_data);
 
         return response()->json([
             'message'=> 'Orderan berhasil',
