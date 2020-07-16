@@ -32,8 +32,7 @@
                                 <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>No Izin</th>
-                                    <th>Nama Pemilik</th>
+                                    <th>Nama Penyewa</th>
                                     <th>Alamat</th>
                                     <th>Nomor Telepon</th>
                                     <th>Email</th>
@@ -44,7 +43,6 @@
                                 @foreach($users as $user)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
-                                        <td>{{$user->no_izin}}</td>
                                         <td><a href="{{route('user.show', $user->id)}}">{{$user->nama_perusahaan}}</a></td>
                                         <td>{{$user->alamat}}</td>
                                         <td>{{$user->no_hp}}</td>

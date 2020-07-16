@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bf5f2d8f-deba-4097-90e8-99f8c7eddf95" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/admin/users/penyewa/users.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/admin/users/penyewa/users.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,8 +20,8 @@
       <file leaf-file-name="OrderController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Penyewa/OrderController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
-              <caret line="55" column="10" lean-forward="false" selection-start-line="55" selection-start-column="10" selection-end-line="69" selection-end-column="69" />
+            <state relative-caret-position="97">
+              <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
               <folding>
                 <element signature="e#52#88#0#PHP" expanded="true" />
               </folding>
@@ -28,7 +29,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="users.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/pages/admin/users/penyewa/users.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="91">
+              <caret line="34" column="52" lean-forward="false" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
+              <folding>
+                <marker date="1594895305219" expanded="true" signature="9:28" ph="..." />
+                <marker date="1594895305219" expanded="true" signature="39:48" ph="..." />
+                <marker date="1594895305219" expanded="true" signature="1741:1756" ph="..." />
+                <marker date="1594895305219" expanded="true" signature="1845:1861" ph="..." />
+                <marker date="1594895305219" expanded="true" signature="1924:1953" ph="..." />
+                <marker date="1594895305219" expanded="true" signature="1959:1981" ph="..." />
+                <marker date="1594895305219" expanded="true" signature="2039:2052" ph="..." />
+                <marker date="1594895305219" expanded="true" signature="2106:2118" ph="..." />
+                <marker date="1594895305219" expanded="true" signature="2172:2184" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Auth/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
@@ -92,7 +113,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Penyewa/Auth/ForgotPasswordController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Penyewa/Auth/ResetPasswordController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Penyewa/Auth/VerificationController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Penyewa/Auth/LoginController.php" />
@@ -143,6 +163,7 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Auth/LoginController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Penyewa/OrderController.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/admin/users/penyewa/users.blade.php" />
       </list>
     </option>
   </component>
@@ -332,6 +353,51 @@
             <path>
               <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
               <item name="papanreklame" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="papanreklame" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="papanreklame" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="papanreklame" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="papanreklame" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="users" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="papanreklame" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="users" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="penyewa" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="papanreklame" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
@@ -422,12 +488,12 @@
       <workItem from="1594464804030" duration="13318000" />
       <workItem from="1594714742637" duration="3425000" />
       <workItem from="1594801290899" duration="16093000" />
-      <workItem from="1594871757051" duration="3374000" />
+      <workItem from="1594871757051" duration="4770000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166068000" />
+    <option name="totallyTimeSpent" value="167464000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -705,13 +771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/admin/users/penyewa/users.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="49" column="65" lean-forward="false" selection-start-line="49" selection-start-column="65" selection-end-line="49" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/admin/users/pemilik/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -827,21 +886,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Auth/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="36" column="24" lean-forward="true" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Penyewa/OrderController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="55" column="10" lean-forward="false" selection-start-line="55" selection-start-column="10" selection-end-line="69" selection-end-column="69" />
+        <state relative-caret-position="97">
+          <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding>
             <element signature="e#52#88#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Auth/LoginController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/admin/users/penyewa/users.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="36" column="24" lean-forward="true" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
-          <folding />
+        <state relative-caret-position="91">
+          <caret line="34" column="52" lean-forward="false" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
+          <folding>
+            <marker date="1594895305219" expanded="true" signature="9:28" ph="..." />
+            <marker date="1594895305219" expanded="true" signature="39:48" ph="..." />
+            <marker date="1594895305219" expanded="true" signature="1741:1756" ph="..." />
+            <marker date="1594895305219" expanded="true" signature="1845:1861" ph="..." />
+            <marker date="1594895305219" expanded="true" signature="1924:1953" ph="..." />
+            <marker date="1594895305219" expanded="true" signature="1959:1981" ph="..." />
+            <marker date="1594895305219" expanded="true" signature="2039:2052" ph="..." />
+            <marker date="1594895305219" expanded="true" signature="2106:2118" ph="..." />
+            <marker date="1594895305219" expanded="true" signature="2172:2184" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
