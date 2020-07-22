@@ -24,4 +24,28 @@ class UserController extends Controller
             'data' => $user
         ]);
     }
+
+    public function updateProfile(Request $request)
+    {
+        if ($request->password == null || empty($request->password)){
+            $user = Auth::guard('driver-api')->user();
+            $user->name = $request->name;
+            $user->save();
+            return response()->json([
+                'message' => 'successfully update profile',
+                'status' => true,
+                'data' => $user
+            ]);
+        }else{
+            $user = Auth::guard('driver-api')->user();
+            $user->name = $request->name;
+            $user->password = $request->password;
+            $user->save();
+            return response()->json([
+                'message' => 'successfully update profile',
+                'status' => true,
+                'data' => $user
+            ]);
+        }
+    }
 }

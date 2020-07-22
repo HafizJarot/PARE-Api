@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\superadmin;
 
 use App\PemilikReklame;
+use App\Produk;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -63,7 +64,8 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::findOrFail($id);
-        return view('pages.admin.users.pemilik.show', compact('user'));
+        $produks = Produk::all();
+        return view('pages.admin.users.pemilik.show', compact('user', 'produks'));
     }
 
     /**
