@@ -74,16 +74,16 @@
                                 @foreach($produks as $produk)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
-                                        <td>{{$produk->foto}}</td>
+                                        <td><img src="{{$produk->foto}}" width="90" height="90"/></td>
                                         <td>{{$produk->harga_sewa}}</td>
                                         <td>{{$produk->alamat}}</td>
                                         <td>{{$produk->keterangan}}</td>
                                         <td>{{$produk->sisi}}</td>
-                                        {{--@if($produk->order->status == 'pending')--}}
-                                            {{--<td>sudah di pesan</td>--}}
-                                        {{--@else--}}
-                                            {{--<td>belum di pesan</td>--}}
-                                        {{--@endif--}}
+                                        @if($produk->order['status']== 'pending')
+                                            <td>sudah di pesan</td>
+                                        @else
+                                            <td>belum di pesan</td>
+                                        @endif
                                     </tr>
                                 @endforeach
                                 </tbody>
