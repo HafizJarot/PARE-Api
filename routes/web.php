@@ -33,6 +33,7 @@ Route::get('/notif/{id}', 'superadmin\NotifikasiPemilikReklameController@update'
 Route::get('/user/pemilik', 'superadmin\UserController@pemilik')->name('user.pemilik');
 Route::get('/user/penyewa', 'superadmin\UserController@penyewa')->name('user.penyewa');
 Route::get('/user/{id}', 'superadmin\UserController@show')->name('user.show');
+Route::get('/user/{id}/penyewa', 'superadmin\UserController@showPenyewa')->name('user.show.penyewa');
 
 
 //Auth::routes();

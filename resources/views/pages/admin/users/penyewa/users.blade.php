@@ -43,7 +43,7 @@
                                 @foreach($users as $user)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
-                                        <td><a href="{{route('user.show', $user->id)}}">{{$user->nama}}</a></td>
+                                        <td><a href="{{route('user.show.penyewa', $user->id)}}">{{$user->nama}}</a></td>
                                         <td>{{$user->alamat}}</td>
                                         <td>{{$user->no_hp}}</td>
                                         <td>{{$user->email}}</td>

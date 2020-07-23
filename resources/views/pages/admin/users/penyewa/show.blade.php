@@ -42,5 +42,62 @@
         </div>
         <!-- /.row -->
 
+        <div class="col-8">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title"></h3>
+
+                    <div class="box-tools">
+                        <div class="input-group input-group-sm" style="width: 150px;">
+                            <input type="text" name="table_search" class="form-control pull-right"
+                                   placeholder="Search">
+
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Foto</th>
+                                <th>Harga Sewa</th>
+                                <th>Alamat</th>
+                                <th>Keterangan</th>
+                                <th>Sisi</th>
+                                <th>Status</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($user->orders as $order)
+                                <tr>
+                                    <td>{{$loop->iteration}}</td>
+                                    <td><img src="{{$order->produk->foto}}" width="90" height="90"/></td>
+                                    <td>{{$order->produk->harga_sewa}}</td>
+                                    <td>{{$order->produk->alamat}}</td>
+                                    <td>{{$order->produk->keterangan}}</td>
+                                    <td>{{$order->produk->sisi}}</td>
+                                    @if(isset($order->produk->order['status']) == 'pending')
+                                        <td>sudah di pesan</td>
+                                    @else
+                                        <td>belum di pesan</td>
+                                    @endif
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+
     </section>
 @endsection

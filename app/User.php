@@ -44,4 +44,8 @@ class User extends Authenticatable implements MustVerifyEmail
     public function sendNotify($message){
         return event(new Events\UserRegisterEvent($message));
     }
+
+    public function orders(){
+        return $this->hasMany(Order::class, 'id_penyewa', 'id');
+    }
 }

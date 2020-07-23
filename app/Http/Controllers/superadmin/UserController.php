@@ -69,6 +69,16 @@ class UserController extends Controller
         return view('pages.admin.users.pemilik.show', compact('user', 'produks'));
     }
 
+    public function showPenyewa($id)
+    {
+        $user = User::findOrFail($id);
+
+        //$produks = Produk::where('id_user', $user->id)->get();
+        return view('pages.admin.users.penyewa.show', compact('user'));
+    }
+
+
+
     /**
      * Show the form for editing the specified resource.
      *
