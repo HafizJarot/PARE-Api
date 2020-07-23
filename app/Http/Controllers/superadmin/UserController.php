@@ -64,7 +64,8 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::findOrFail($id);
-        $produks = Produk::all();
+
+        $produks = Produk::where('id_user', $user->id)->get();
         return view('pages.admin.users.pemilik.show', compact('user', 'produks'));
     }
 
