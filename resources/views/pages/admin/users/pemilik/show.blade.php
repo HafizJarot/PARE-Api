@@ -15,7 +15,8 @@
                 <!-- Profile Image -->
                 <div class="box box-primary">
                     <div class="box-body box-profile">
-                        <img class="profile-user-img rounded-circle img-fluid mx-auto d-block" src="" alt="User profile picture">
+                        <img class="profile-user-img rounded-circle img-fluid mx-auto d-block" src=""
+                             alt="User profile picture">
 
                         <h3 class="profile-username text-center">{{ $user->nama_perusahaan }}</h3>
 
@@ -65,6 +66,7 @@
                                     <th>Alamat</th>
                                     <th>Keterangan</th>
                                     <th>Sisi</th>
+                                    <th>Status</th>
 
                                 </tr>
                                 </thead>
@@ -77,7 +79,12 @@
                                         <td>{{$produk->alamat}}</td>
                                         <td>{{$produk->keterangan}}</td>
                                         <td>{{$produk->sisi}}</td>
-
+                                        <td>{{ $produk->order->verifikasi }}</td>
+                                        @if($produk->order->verifikasi == 2)
+                                            <td>sudah di pesan</td>
+                                        @else
+                                            <td>belum di pesan</td>
+                                        @endif
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -91,8 +98,6 @@
             <!-- /.col -->
         </div>
         <!-- /.row -->
-
-
 
 
     </section>
