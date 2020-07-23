@@ -79,7 +79,6 @@
                                         <td>{{$produk->alamat}}</td>
                                         <td>{{$produk->keterangan}}</td>
                                         <td>{{$produk->sisi}}</td>
-                                        <td>{{ $produk->order->verifikasi }}</td>
                                         @if($produk->order->status == 'pending')
                                             <td>sudah di pesan</td>
                                         @else
