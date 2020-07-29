@@ -124,7 +124,7 @@ class ProdukController extends Controller
             return response()->json([
                 'message' => 'berhasil update',
                 'status' => true,
-                'data' => new ProdukResource($produk)
+                'data' => (object)[]
             ]);
         }catch (\Exception $exception){
             return response()->json([
@@ -154,7 +154,7 @@ class ProdukController extends Controller
         ]);
     }
 
-    public function delete ($id) {
+    public function delete($id){
 	    try{
 	        $produk = Produk::find($id);
 	        $produk->delete();

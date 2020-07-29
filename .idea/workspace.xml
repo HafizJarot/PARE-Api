@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bf5f2d8f-deba-4097-90e8-99f8c7eddf95" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Pemilik/ProdukController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Pemilik/ProdukController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -114,7 +113,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProdukController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProdukController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Pemilik/ProdukController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
@@ -146,11 +145,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="api.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="38" column="64" lean-forward="false" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
+            <state relative-caret-position="258">
+              <caret line="34" column="85" lean-forward="false" selection-start-line="34" selection-start-column="74" selection-end-line="34" selection-end-column="85" />
               <folding />
             </state>
           </provider>
@@ -233,8 +232,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/superadmin/UserController.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/admin/users/penyewa/show.blade.php" />
-        <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Pemilik/ProdukController.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
       </list>
     </option>
   </component>
@@ -523,12 +522,12 @@
       <workItem from="1595424508412" duration="2844000" />
       <workItem from="1595481800713" duration="7546000" />
       <workItem from="1595506055692" duration="599000" />
-      <workItem from="1596032663140" duration="3697000" />
+      <workItem from="1596032663140" duration="4350000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195823000" />
+    <option name="totallyTimeSpent" value="196476000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -963,14 +962,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="38" column="64" lean-forward="false" selection-start-line="38" selection-start-column="64" selection-end-line="38" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Auth/RegisterController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
@@ -994,6 +985,14 @@
           <folding>
             <element signature="e#994#3007#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="34" column="85" lean-forward="false" selection-start-line="34" selection-start-column="74" selection-end-line="34" selection-end-column="85" />
+          <folding />
         </state>
       </provider>
     </entry>

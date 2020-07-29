@@ -32,7 +32,7 @@ Route::post('produk/search','Api\Penyewa\ProdukController@search');
 Route::get('produk','Api\Pemilik\ProdukController@index');
 Route::post('produk/store', 'Api\Pemilik\ProdukController@store');
 Route::post('produk/{id}/update', 'Api\Pemilik\ProdukController@update');
-Route::post('produk/{id}/update/photo', 'Api\Pemilik\ProdukController@updatePhoto');
+    Route::post('produk/{id}/update/photo', 'Api\Pemilik\ProdukController@updatePhoto');
 Route::get('produk/{id}/delete','Api\Pemilik\ProdukController@delete');
 
 //Route::post('order','Api\Penyewa\OrderControllerq@order');
