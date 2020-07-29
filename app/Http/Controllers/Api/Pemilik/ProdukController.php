@@ -90,7 +90,7 @@ class ProdukController extends Controller
         }
     }
 
-    public function update(Request $request,$id){
+    public function update(Request $request,$id) {
         try{
             $validator = Validator::make($request->all(),[
                 'panjang' => 'numeric',
@@ -116,15 +116,6 @@ class ProdukController extends Controller
             $produk->masa_berdiri = $request->masa_berdiri;
             $produk->sisi = $request->sisi;
             $produk->keterangan = $request->keterangan;
-            $photo = $request->file('foto');
-            if ($photo){
-                $filename = time() . '.' . $photo->getClientOriginalExtension();
-                $filepath = 'car/' . $filename;
-                Storage::disk('s3')->put($filepath, file_get_contents($photo));
-                $produk->photo = Storage::disk('s3')->url($filepath, $filename);
-            }else{
-                $produk->foto = $produk->foto;
-            }
             $produk->harga_sewa = $request->harga_sewa;
             $produk->alamat = $request->alamat;
             $produk->status = false;
@@ -142,6 +133,25 @@ class ProdukController extends Controller
                 'data' => (object)[]
             ]);
         }
+    }
+
+
+    public function updatePhoto(Request $request, $id)
+    {
+        $photo = $request->file('foto');
+        $filename = time() . '.' . $photo->getClientOriginalExtension();
+        $filepath = 'produk/' . $filename;
+        Storage::disk('s3')->put($filepath, file_get_contents($photo));
+
+        $produk = Produk::findOrFail($id);
+        $produk->photo = Storage::disk('s3')->url($filepath, $filename);
+        $produk->update();
+
+        return response()->json([
+            'message' => 'berhasil update',
+            'status' => true,
+            'data' => (object)[]
+        ]);
     }
 
     public function delete ($id) {
