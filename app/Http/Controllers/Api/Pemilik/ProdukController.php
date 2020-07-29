@@ -144,7 +144,7 @@ class ProdukController extends Controller
         Storage::disk('s3')->put($filepath, file_get_contents($photo));
 
         $produk = Produk::findOrFail($id);
-        $produk->photo = Storage::disk('s3')->url($filepath, $filename);
+        $produk->foto = Storage::disk('s3')->url($filepath, $filename);
         $produk->update();
 
         return response()->json([
