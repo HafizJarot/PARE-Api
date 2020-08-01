@@ -29,7 +29,7 @@ class LoginController extends Controller
 
         if (Auth::guard('user')->attempt($credentials)){
             $user = Auth::guard('user')->user();
-            if ($request->role == $user->role){
+            if ($request->role == $user->role && $user->status == true){
                 return response()->json([
                     'status' => true,
                     'message' => 'Anda berhasil login',
