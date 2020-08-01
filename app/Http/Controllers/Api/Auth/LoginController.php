@@ -38,15 +38,15 @@ class LoginController extends Controller
             }else{
                 return response()->json([
                     'status' => false,
-                    'message' => 'verifikasi email anda dahulu',
+                    'message' => 'Tidak dapat login, mungkin email anda belum dikonfirmasi',
                     'data' => (object)[]
                 ]);
             }
         }else{
             return response()->json([
                 'status' => false,
+                'massage' => 'masukkan email dan password yang benar',
                 'data' => (object)[],
-                'massage' => 'masukkan email dan password yang benar'
             ]);
         }
     }
