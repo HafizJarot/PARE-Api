@@ -20,11 +20,16 @@ class UserResource extends JsonResource
             "nama_perusahaan" => $this->nama_perusahaan,
             "nama"=> $this->nama,
             "email"=> $this->email,
-            "role"=> $this->role,
+            "role"=> $this->role ? true : false,
+            "api_token" => $this->api_token,
+            "fcm_token" => $this->fcm_token,
             "alamat"=> $this->alamat,
             "no_hp"=> $this->no_hp,
-            "status"=> $this->status
-
+            "status"=> $this->status ? true : false,
+            "saldo" => $this->saldo,
+            "nama_bank" => $this->nama_bank,
+            "nomor_rekening" => $this->nomor_rekening,
+            "nama_rekening" => $this->nama_rekening,
         ];
     }
 }

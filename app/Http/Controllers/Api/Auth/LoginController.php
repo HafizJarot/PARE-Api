@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\Auth;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -34,7 +35,7 @@ class LoginController extends Controller
                     return response()->json([
                         'status' => true,
                         'message' => 'Anda berhasil login',
-                        'data' => $user,
+                        'data' => new UserResource($user),
                     ], 200);
                 }else{
                     return response()->json([
