@@ -28,6 +28,15 @@ class UserController extends Controller
     public function ambilUang(Request $request)
     {
         $pemilik = Auth::user();
+
+        if ($pemilik->saldo < $request->saldo){
+            return response()->json([
+                'message' => 'saldo anda kurang dari Rp. '.$request->saldo,
+                'status' => false,
+                'data' => (object)[]
+            ]);
+        }
+
         $pemilik->saldo -= $request->saldo;
         $pemilik->update();
 
