@@ -24,6 +24,7 @@ Route::get('user/email/verify/{id}', 'Api\Auth\VerificationController@verify')->
 Route::get('user/email/resend', 'Api\Auth\VerificationController@resend')->name('api.verification.resend');
 Route::get('user/profile', 'Api\Penyewa\UserController@profile');
 Route::get('user/profile/update', 'Api\Penyewa\UserController@updateProfile');
+Route::post('user/ambil/uang', 'Api\Penyewa\UserController@ambilUang');
 
 
 Route::get('produk/all','Api\Penyewa\ProdukController@index');

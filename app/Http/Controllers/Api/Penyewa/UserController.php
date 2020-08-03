@@ -27,7 +27,7 @@ class UserController extends Controller
 
     public function ambilUang(Request $request)
     {
-        $pemilik = Auth::guard('pemilik')->user();
+        $pemilik = Auth::user();
         $pemilik->saldo -= $request->saldo;
         $pemilik->update();
 
@@ -37,6 +37,7 @@ class UserController extends Controller
             'data' => (object)[]
         ]);
     }
+
 
     public function updateProfile(Request $request)
     {
