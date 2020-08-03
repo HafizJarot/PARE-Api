@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Api\Penyewa;
 
 use App\Http\Controllers\Controller;
 use App\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -40,7 +40,7 @@ class UserController extends Controller
 
         $pemilik->saldo -= $request->saldo;
         $pemilik->update();
-        $this->ambilUang($pemilik, $request);
+        $this->sendEmail($pemilik, $request);
 
         return response()->json([
             'message' => 'successfully ambil uang',
