@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -39,12 +40,35 @@ class UserController extends Controller
 
         $pemilik->saldo -= $request->saldo;
         $pemilik->update();
+        $this->ambilUang($pemilik, $request);
 
         return response()->json([
             'message' => 'successfully ambil uang',
             'status' => true,
             'data' => (object)[]
         ]);
+    }
+
+    public function sendEmail($user, $request)
+    {
+        $content = $user->nama_perusahaan.' ingin menarik saldo ';
+        Mail::send(
+            'emails.tarik-saldo',
+            [
+                'nama_perusahaan' => $user->nama_perusahaan,
+                'content' => $content,
+                'name_bank' => $request->nama_bank,
+                'account_name' => $request->nama_rekening,
+                'account_number' => $request->nomor_rekening,
+                'balance' => $request->saldo
+            ],
+            function ($message) use ($user) {
+                $message->subject('Tarik Saldo');
+                $message->from($user->email, $user->business_name);
+                $message->to('pare@gmail.com');
+            }
+        );
+        return true;
     }
 
 
