@@ -25,6 +25,19 @@ class UserController extends Controller
         ]);
     }
 
+    public function ambilUang(Request $request)
+    {
+        $pemilik = Auth::guard('pemilik')->user();
+        $pemilik->saldo -= $request->saldo;
+        $pemilik->update();
+
+        return response()->json([
+            'message' => 'successfully ambil uang',
+            'status' => true,
+            'data' => (object)[]
+        ]);
+    }
+
     public function updateProfile(Request $request)
     {
         if ($request->password == null || empty($request->password)){

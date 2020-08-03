@@ -69,10 +69,14 @@ class OrderController extends Controller
         $token = $order->pemilik->fcm_token;
         FacadesFCM::sendTo($token, $option, $notification, $_data);
 
+        $pemilik = User::where('id', $order->pemilik->id)->first();
+        $pemilik->saldo += $order->total_harga;
+        $pemilik->update();
+
         return response()->json([
-            'message'=> 'Orderan berhasil',
-            'status'=> true,
-            'data'=> new OrderResource($order)
+            'message' => 'Orderan berhasil',
+            'status' => true,
+            'data' => new OrderResource($order)
             //'data' => $order->pemilik->fcm_token
         ]);
     }
