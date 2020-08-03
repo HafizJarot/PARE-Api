@@ -53,6 +53,10 @@ class OrderController extends Controller
         $order->status = 'pending';
         $order->save();
 
+        $pemilik = User::where('id', $order->pemilik->id)->first();
+        $pemilik->saldo += $order->total_harga;
+        $pemilik->update();
+
         $optionBuilder = new OptionsBuilder();
         $optionBuilder->setTimeToLive(60 * 20);
         $message = "ada pesanan masuk";
@@ -68,10 +72,6 @@ class OrderController extends Controller
         // You must change it to get your tokens
         $token = $order->pemilik->fcm_token;
         FacadesFCM::sendTo($token, $option, $notification, $_data);
-
-        $pemilik = User::where('id', $order->pemilik->id)->first();
-        $pemilik->saldo += $order->total_harga;
-        $pemilik->update();
 
         return response()->json([
             'message' => 'Orderan berhasil',
