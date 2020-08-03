@@ -307,7 +307,7 @@ History
                                                                     <center><p>Nama Bank : {{ $name_bank }}</p></center><hr>
                                                                     <center><p>Nama Rekening : {{ $account_name }}</p></center><hr>
                                                                     <center><p>Nomor Rekening : {{ $account_number }}</p></center><hr>
-                                                                    <center><p>Saldo Yang Ingin Ditarik : Rp. {{ number_format($saldo) }}</p></center><hr>
+                                                                    <center><p>Saldo Yang Ingin Ditarik : Rp. {{ number_format($balance) }}</p></center><hr>
                                                                 </div>
                                                             </td>
                                                         </tr>
