@@ -38,7 +38,7 @@ class LoginController extends Controller
                     return response()->json([
                         'status' => true,
                         'message' => 'Anda berhasil login',
-                        'data' => new PemilikResource($user->pemilik),
+                        'data' => new UserResource($user),
                     ], 200);
                 }else{
                     return response()->json([
@@ -52,7 +52,7 @@ class LoginController extends Controller
                     return response()->json([
                         'status' => true,
                         'message' => 'Anda berhasil login',
-                        'data' => new PenyewaResource($user->penyewa),
+                        'data' => new UserResource($user),
                     ], 200);
                 }else{
                     return response()->json([

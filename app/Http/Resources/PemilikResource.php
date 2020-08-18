@@ -19,7 +19,6 @@ class PemilikResource extends JsonResource
             "no_izin" => $this->no_izin,
             "nama_perusahaan" => $this->nama_perusahaan,
             "alamat" => $this->alamat,
-            "user" => new UserResource($this->user)
         ];
     }
 }

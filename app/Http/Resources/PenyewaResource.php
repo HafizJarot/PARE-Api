@@ -18,7 +18,6 @@ class PenyewaResource extends JsonResource
             "id" => $this->id,
             "nama" => $this->nama,
             "alamat" => $this->alamat,
-            "user" => new UserResource($this->user)
         ];
     }
 }

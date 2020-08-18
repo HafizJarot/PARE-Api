@@ -14,6 +14,13 @@ class UserResource extends JsonResource
      */
     public function toArray($request)
     {
+        $result = [];
+        if ($this->role) {
+            $result = $this->pemilik;
+        }else{
+            $result = $this->penyewa;
+        }
+
         return [
             "id" => $this->id,
             "email"=> $this->email,
@@ -21,6 +28,8 @@ class UserResource extends JsonResource
             "api_token" => $this->api_token,
             "fcm_token" => $this->fcm_token,
             "status"=> $this->status ? true : false,
+            "pemilik" => $this->role ? $result : null,
+            "penyewa" => !$this->role ? $result : null,
 
             // "no_izin" => $this->no_izin,
             // "nama_perusahaan" => $this->nama_perusahaan,
