@@ -19,7 +19,7 @@ class ProdukController extends Controller
 
     public function index(){
 	    try{
-	        $produks = Produk::where('id_user', Auth::user()->id)->get();
+	        $produks = Produk::where('id_pemilik', Auth::user()->pemilik->id)->get();
 
 	        return response()->json([
                 'message' => 'berhasil mengambil data berdasarkan user',
@@ -39,13 +39,13 @@ class ProdukController extends Controller
     {
         try{
             $validator = Validator::make($request->all(),[
-               'panjang' => 'required|numeric',
-               'lebar' => 'required|numeric',
-               'masa_berdiri' => 'required',
-               'sisi' => 'required',
-               'keterangan' => 'required|',
-               'harga_sewa' => 'required|numeric',
-               'foto' => 'required|file|image',
+                'panjang' => 'required|numeric',
+                'lebar' => 'required|numeric',
+                'masa_berdiri' => 'required',
+                'sisi' => 'required',
+                'keterangan' => 'required|',
+                'harga_sewa' => 'required|numeric',
+                'foto' => 'required|file|image',
                 'alamat' => 'required'
             ]);
 
@@ -63,7 +63,7 @@ class ProdukController extends Controller
             Storage::disk('s3')->put($filepath, file_get_contents($photo));
 
             $produk = new Produk();
-            $produk->id_user = Auth::user()->id;
+            $produk->id_pemilik = Auth::user()->pemilik->id;
             $produk->panjang = $request->panjang;
             $produk->lebar = $request->lebar;
             $produk->masa_berdiri = $request->masa_berdiri;
@@ -110,7 +110,7 @@ class ProdukController extends Controller
             }
 
             $produk = Produk::findOrFail($id);
-            $produk->id_user = Auth::user()->id;
+            $produk->id_pemilik = Auth::user()->pemilik->id;
             $produk->panjang = $request->panjang;
             $produk->lebar = $request->lebar;
             $produk->masa_berdiri = $request->masa_berdiri;

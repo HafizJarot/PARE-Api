@@ -7,6 +7,8 @@ use App\Produk;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Pemilik;
+use App\Penyewa;
 
 class UserController extends Controller
 {
@@ -24,14 +26,14 @@ class UserController extends Controller
 
     public function pemilik()
     {
-        $users = User::where('status','1')->where('role', true)->get();
-        return view('pages.admin.users.pemilik.users', compact('users'));
+        $pemiliks = Pemilik::get();
+        return view('pages.admin.users.pemilik.users', compact('pemiliks'));
     }
 
     public function penyewa()
     {
-        $users = User::where('status','1')->where('role', false)->get();
-        return view('pages.admin.users.penyewa.users', compact('users'));
+        $penyewas = Penyewa::get();
+        return view('pages.admin.users.penyewa.users', compact('penyewas'));
     }
 
     /**
@@ -52,7 +54,26 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+            'no_izin' => 'required|unique:pemiliks',
+            'nama_perusahaan' => 'required',
+            'alamat' => 'required'
+        ];
+
+        $message = [
+            'required' => ':attribute tidak boleh kosong',
+            'unique' => ':attribute sudah pernah di tambahkan',
+        ];
+
+        $this->validate($request, $rules, $message);
+
+        $pemilik = new Pemilik();
+        $pemilik->no_izin = $request->no_izin;
+        $pemilik->nama_perusahaan = $request->nama_perusahaan;
+        $pemilik->alamat = $request->alamat;
+        $pemilik->save();
+
+        return redirect()->route('user.pemilik')->with('success', 'berhasil menambahkan data');
     }
 
     /**
@@ -63,10 +84,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::findOrFail($id);
-
-        $produks = Produk::where('id_user', $user->id)->get();
-        return view('pages.admin.users.pemilik.show', compact('user', 'produks'));
+        $pemilik = Pemilik::findOrFail($id);
+        $produks = Produk::where('id_pemilik', $pemilik->id)->get();
+        return view('pages.admin.users.pemilik.show', compact('pemilik', 'produks'));
     }
 
     public function showPenyewa($id)

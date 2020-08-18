@@ -17,6 +17,7 @@ class VerificationController extends Controller
         $user = User::findOrFail($id);
         $date = date("Y-m-d g:i:s");
         $user->email_verified_at = $date;
+        $user->status = true;
         $user->save();
         return response()->json('Email Verified!');
     }

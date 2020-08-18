@@ -30,9 +30,13 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::resource('/notif', 'superadmin\NotifikasiPemilikReklameController')->only('index');
 Route::get('/notif/{id}', 'superadmin\NotifikasiPemilikReklameController@update')->name('notif.update');
+
 Route::get('/user/pemilik', 'superadmin\UserController@pemilik')->name('user.pemilik');
+Route::get('/user/pemilik/create', function () {return view('pages.admin.users.pemilik.create'); })->name('admin.pemilik.create');
+Route::post('/user/pemilik/store', 'superadmin\UserController@store')->name('admin.pemilik.store');
+Route::get('/user//pemilik/{id}', 'superadmin\UserController@show')->name('user.show');
+
 Route::get('/user/penyewa', 'superadmin\UserController@penyewa')->name('user.penyewa');
-Route::get('/user/{id}', 'superadmin\UserController@show')->name('user.show');
 Route::get('/user/{id}/penyewa', 'superadmin\UserController@showPenyewa')->name('user.show.penyewa');
 
 

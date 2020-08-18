@@ -8,8 +8,9 @@ class Produk extends Model
 {
     protected $guarded = [];
 
-    public function user(){
-        return $this->belongsTo(User::class,'id_user','id');
+    public function pemilik()
+    {
+        return $this->belongsTo(Pemilik::class, 'id_pemilik', 'id');
     }
 
     public function order(){

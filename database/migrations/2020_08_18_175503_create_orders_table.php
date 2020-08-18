@@ -14,21 +14,20 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->integer('id_penyewa')->unsigned();
             $table->integer('id_pemilik')->unsigned();
             $table->integer('id_produk')->unsigned();
+            $table->date('tanggal_mulai_sewa');
+            $table->date('tanggal_selesai_sewa');
             $table->integer('harga');
             $table->integer('total_harga');
-            $table->date('tanggal_mulai_sewa');
-            $table->date('selesai_sewa');
-            $table->string('verifikasi');
             $table->string('status')->default('pending');
             $table->string('snap')->nullable();
             $table->timestamps();
 
-            $table->foreign('id_penyewa')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('id_pemilik')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('id_penyewa')->references('id')->on('penyewas')->onDelete('cascade');
+            $table->foreign('id_pemilik')->references('id')->on('pemiliks')->onDelete('cascade');
             $table->foreign('id_produk')->references('id')->on('produks')->onDelete('cascade');
         });
     }

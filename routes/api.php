@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::post('user/register/penyewa','Api\Auth\RegisterController@registerPenyewa');
-Route::post('user/register/pemilik','Api\Auth\RegisterController@registerPemilik');
+Route::post('user/register/pemilik', 'Api\Auth\RegisterController@registerPemilik');
+Route::get('user/pemilik/{no_izin}', 'Api\Auth\RegisterController@checkNoIzin');
 
 Route::post('user/login','Api\Auth\LoginController@login');
 

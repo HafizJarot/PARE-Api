@@ -14,16 +14,8 @@
                     <div class="box-header">
                         <h3 class="box-title"></h3>
 
-                        <div class="box-tools">
-                            <div class="input-group input-group-sm" style="width: 150px;">
-                                <input type="text" name="table_search" class="form-control pull-right"
-                                       placeholder="Search">
+                        <a href="{{ route('admin.pemilik.create') }}" class="btn btn-info">Tambah</a>
 
-                                <div class="input-group-btn">
-                                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body no-padding">
@@ -41,14 +33,14 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($users as $user)
+                                @foreach($pemiliks as $pemilik)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
-                                        <td>{{$user->no_izin}}</td>
-                                        <td><a href="{{route('user.show', $user->id)}}">{{$user->nama_perusahaan}}</a></td>
-                                        <td>{{$user->alamat}}</td>
-                                        <td>{{$user->no_hp}}</td>
-                                        <td>{{$user->email}}</td>
+                                        <td>{{$pemilik->no_izin}}</td>
+                                        <td><a href="{{route('user.show', $pemilik->id)}}">{{$pemilik->nama_perusahaan}}</a></td>
+                                        <td>{{$pemilik->alamat}}</td>
+                                        <td>{{$pemilik->no_hp}}</td>
+                                        <td>{{$pemilik->email}}</td>
 
                                     </tr>
                                 @endforeach

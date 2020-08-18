@@ -45,7 +45,22 @@ class User extends Authenticatable implements MustVerifyEmail
         return event(new Events\UserRegisterEvent($message));
     }
 
-    public function orders(){
-        return $this->hasMany(Order::class, 'id_penyewa', 'id');
+    public function penyewa()
+    {
+        return $this->hasOne(Penyewa::class, 'id_user', 'id');
     }
+
+    public function pemilik()
+    {
+        return $this->hasOne(Pemilik::class, 'id_user', 'id');
+    }
+
+    public function updateFcm($fcm_token)
+    {
+        return $this->update(['fcm_token' => $fcm_token]);
+    }
+
+    // public function orders(){
+    //     return $this->hasMany(Order::class, 'id_penyewa', 'id');
+    // }
 }

@@ -25,12 +25,10 @@ class ProdukController extends Controller
             foreach ($datas as $data){
                 $now = date('Y-m-d');
                 $order = Order::where('id_produk', $data->id)
-                    ->whereDate('selesai_sewa', '>=', $now)->first();
-
+                    ->whereDate('tanggal_selesai_sewa', '>=', $now)->first();
                 if (!$order){
                     array_push($results, $data);
                 }
-
             }
 
             return response()->json([

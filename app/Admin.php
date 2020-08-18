@@ -16,7 +16,8 @@ class Admin extends Authenticatable
      * @var array
      */
     protected $guarded = [];
-    protected  $guard = 'admin';
+    protected $guard = 'admin';
+    //protected $timestamps = false;
 
     /**
      * The attributes that should be hidden for arrays.

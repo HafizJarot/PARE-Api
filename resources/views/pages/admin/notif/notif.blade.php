@@ -35,7 +35,6 @@
                                     <th>No Izin</th>
                                     <th>Nama Pemilik</th>
                                     <th>Alamat</th>
-                                    <th>Nomor Telepon</th>
                                     <th>Email</th>
                                     <th>Action</th>
                                 </tr>
@@ -47,8 +46,7 @@
                                         <td>{{$notif->no_izin}}</td>
                                         <td>{{$notif->nama_perusahaan}}</td>
                                         <td>{{$notif->alamat}}</td>
-                                        <td>{{$notif->no_hp}}</td>
-                                        <td>{{$notif->email}}</td>
+                                        <td>{{$notif->user->email}}</td>
                                         <td>
                                             <a href="{{route('notif.update',$notif->id)}}" class="btn btn-success"><i class="fa fa-check"></i></a>
                                             <a href="#" class="btn btn-danger"><i class="fa fa-times-rectangle"></i></a>

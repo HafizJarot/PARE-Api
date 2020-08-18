@@ -10,12 +10,12 @@ class Order extends Model
 
     public function penyewa()
     {
-        return $this->belongsTo(User::class, 'id_penyewa', 'id');
+        return $this->belongsTo(Penyewa::class, 'id_penyewa', 'id');
     }
 
     public function pemilik()
     {
-        return $this->belongsTo(User::class, 'id_pemilik', 'id');
+        return $this->belongsTo(Pemilik::class, 'id_pemilik', 'id');
     }
 
     public function produk()
