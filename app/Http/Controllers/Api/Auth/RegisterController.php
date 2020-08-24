@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Pemilik;
 use App\Penyewa;
 use App\Providers\RouteServiceProvider;
+use App\Response;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
@@ -30,7 +31,7 @@ class RegisterController extends Controller
         ]);
 
         if ($validator->fails()){
-            return response()->json(['message' => $validator->errors(), 'status' => false]);
+            return Response::transform($validator->errors(), false, (object)[], 400);
         }
 
         $user = new User();
@@ -50,13 +51,7 @@ class RegisterController extends Controller
         $penyewa->save();
 
         $message = "Cek Email Anda, Verifikasi Dahulu";
-
-        return response()->json([
-           'message' => $message,
-           'status' => true,
-           'data' => (object)[]
-        ]);
-
+        return Response::transform($message, true, (object)[], 200);
     }
 
 
@@ -65,18 +60,10 @@ class RegisterController extends Controller
         $checkPemilik = Pemilik::checkPemilik($no_izin);
         if(!$checkPemilik){
             $message = "no izin tidak terdaftar di sistem kami";
-            return response()->json([
-                'message' => $message,
-                'status' => false,
-                'data' => (object)[]
-            ]);
+            return Response::transform($message, false, (object)[], 400);
         }
         $message = "berhasil mengambil data no izin";
-        return response()->json([
-            'message' => $message,
-            'status' => true,
-            'data' => $checkPemilik
-        ]);
+        return Response::transform($message, true, $checkPemilik, 200);
     }
 
 
@@ -88,17 +75,14 @@ class RegisterController extends Controller
         ]);
 
         if($validator->fails()){
-            return response()->json(['message' => $validator->errors(), 'status' => false]);
+            return Response::transform($validator->errors(), false, (object)[], 400);
         }
 
         $checkPemilik = Pemilik::checkPemilik($request->no_izin);
 
         if(!$checkPemilik){
-            return response()->json([
-                'message' => 'no izin tidak terdaftar di sistem kami',
-                'status' => false,
-                'data' => (object)[]
-            ]);
+            return Response::transform('no izin tidak terdaftar di sistem kami', 
+            false, (object)[], 400);
         }
 
         $user = new User();
@@ -114,11 +98,8 @@ class RegisterController extends Controller
         $checkPemilik->id_user = $user->id;
         $checkPemilik->update();
 
-        return response()->json([
-            'message' => 'berhasil register, silahkan menunggu konfirmasi dari admin',
-            'status' => true,
-            'data' => (object)[]
-        ]);
+        return Response::transform('berhasil register, silahkan menunggu konfirmasi dari admin', 
+        true, (object)[], 400);
     }
 
 }

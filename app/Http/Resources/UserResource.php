@@ -16,9 +16,9 @@ class UserResource extends JsonResource
     {
         $result = [];
         if ($this->role) {
-            $result = $this->pemilik;
+            $result = new PemilikResource($this->pemilik);
         }else{
-            $result = $this->penyewa;
+            $result = new PenyewaResource($this->penyewa);
         }
 
         return [
@@ -31,17 +31,6 @@ class UserResource extends JsonResource
             "pemilik" => $this->role ? $result : null,
             "penyewa" => !$this->role ? $result : null,
 
-            // "no_izin" => $this->no_izin,
-            // "nama_perusahaan" => $this->nama_perusahaan,
-            // "nama"=> $this->nama,
-            
-            // "alamat"=> $this->alamat,
-            // "no_hp"=> $this->no_hp,
-            
-            // "saldo" => $this->saldo,
-            // "nama_bank" => $this->nama_bank,
-            // "nomor_rekening" => $this->nomor_rekening,
-            // "nama_rekening" => $this->nama_rekening,
         ];
     }
 }

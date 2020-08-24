@@ -6,6 +6,7 @@ use App\Http\Resources\PemilikResource;
 use App\Http\Resources\PenyewaResource;
 use App\Http\Resources\UserResource;
 use App\Providers\RouteServiceProvider;
+use App\Response;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -32,42 +33,26 @@ class LoginController extends Controller
 
         if (Auth::guard('user')->attempt($credentials)){
             $user = Auth::guard('user')->user();
-            $user->update(['fcm_token' => $request->fcm_token]);
+            $user->fcm_token = $request->fcm_token;
+            $user->update();
+            
             if($user->role == true){
                 if($user->status == true){
-                    return response()->json([
-                        'status' => true,
-                        'message' => 'Anda berhasil login',
-                        'data' => new UserResource($user),
-                    ], 200);
+                    return Response::transform('Anda berhasil login', true, new UserResource($user), 200);
                 }else{
-                    return response()->json([
-                        'status' => false,
-                        'message' => 'Tidak dapat login, mungkin email anda belum dikonfirmasi',
-                        'data' => (object)[]
-                    ]);
+                    return Response::transform('Tidak dapat login, mungkin email anda belum dikonfirmasi', 
+                    false, (object)[], 401);
                 }
             }else{
                 if($user->status == true){
-                    return response()->json([
-                        'status' => true,
-                        'message' => 'Anda berhasil login',
-                        'data' => new UserResource($user),
-                    ], 200);
+                    return Response::transform('Anda berhasil login', true, new UserResource($user), 200);
                 }else{
-                    return response()->json([
-                        'status' => false,
-                        'message' => 'Tidak dapat login, mungkin email anda belum verifikasi',
-                        'data' => (object)[]
-                    ]);
+                    return Response::transform('Tidak dapat login, mungkin email anda belum verifikasi', 
+                    false, (object)[], 401);
                 }
             }
         }else{
-            return response()->json([
-                'status' => false,
-                'massage' => 'masukkan email dan password yang benar',
-                'data' => (object)[],
-            ]);
+            return Response::transform('masukkan email dan password yang benar', false, (object)[], 401);
         }
     }
 }
