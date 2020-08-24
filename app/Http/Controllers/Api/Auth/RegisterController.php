@@ -70,7 +70,7 @@ class RegisterController extends Controller
     public function registerPemilik(Request $request){
 
         $validator = Validator::make($request->all(), [
-            'email'     => 'required|email|unique:users',
+            'email'     => 'required|email|unique:users|max:20',
             'password'  => 'required',
         ]);
 
