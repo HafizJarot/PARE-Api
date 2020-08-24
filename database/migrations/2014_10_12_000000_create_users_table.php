@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 60);
             $table->boolean('role');
             $table->string('api_token', 60)->unique();
-            $table->string('fcm_token', 90)->nullable();
+            $table->string('fcm_token', 191)->nullable();
             //$table->string('no_hp', 13)->unique();
             $table->boolean('status')->default(true);
             $table->rememberToken();
