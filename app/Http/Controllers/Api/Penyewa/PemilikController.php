@@ -19,7 +19,7 @@ class PemilikController extends Controller
         $pemiliks = Pemilik::all();
 
         return response()->json([
-            'message' => 'sukses ambil data pemilik',
+            'message' => 'sukses ambil data pemilik ',
             'status' => true,
             'data' => $pemiliks
         ]);
