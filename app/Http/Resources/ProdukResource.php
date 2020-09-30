@@ -28,7 +28,7 @@ class ProdukResource extends JsonResource
             "harga_sewa"    => $this->harga_sewa,
             "alamat"        => $this->alamat,
             "status"        => $this->status,
-            "pemilik"          => new PemilikResource($this->pemilik)
+            ///"pemilik"          => new PemilikResource($this->pemilik)
 
         ];
     }

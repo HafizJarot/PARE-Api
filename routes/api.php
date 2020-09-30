@@ -27,14 +27,13 @@ Route::get('user/profile', 'Api\Penyewa\UserController@profile');
 Route::get('user/profile/update', 'Api\Penyewa\UserController@updateProfile');
 Route::post('user/ambil/uang', 'Api\Penyewa\UserController@ambilUang');
 
-
-Route::get('produk/all','Api\Penyewa\ProdukController@index');
+Route::get('produk/{id_pemilik}','Api\Penyewa\ProdukController@fetchProductByPemilik');
 Route::post('produk/search','Api\Penyewa\ProdukController@search');
 
 Route::get('produk','Api\Pemilik\ProdukController@index');
 Route::post('produk/store', 'Api\Pemilik\ProdukController@store');
 Route::post('produk/{id}/update', 'Api\Pemilik\ProdukController@update');
-    Route::post('produk/{id}/update/photo', 'Api\Pemilik\ProdukController@updatePhoto');
+Route::post('produk/{id}/update/photo', 'Api\Pemilik\ProdukController@updatePhoto');
 Route::get('produk/{id}/delete','Api\Pemilik\ProdukController@delete');
 
 //Route::post('order','Api\Penyewa\OrderControllerq@order');
@@ -45,3 +44,5 @@ Route::post('snap/charge', 'Api\Penyewa\OrderController@snapToken');
 Route::get('order/penyewa', 'Api\Penyewa\OrderController@myOrders');
 
 Route::get('order/pemilik','Api\Pemilik\OrderController@myOrders');
+
+Route::get('pemilik', 'Api\Penyewa\PemilikController@pemilik');

@@ -16,10 +16,10 @@ class ProdukController extends Controller
         $this->middleware('auth:api');
     }
 
-    public function index()
+    public function fetchProductByPemilik($pemilik_id)
     {
         try{
-            $datas = Produk::where('status', true)->get();
+            $datas = Produk::where('status', true)->where('id_pemilik', $pemilik_id)->get();
 
             $results = [];
             foreach ($datas as $data){
