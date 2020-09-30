@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf5f2d8f-deba-4097-90e8-99f8c7eddf95" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-    </list>
+    <list default="true" id="bf5f2d8f-deba-4097-90e8-99f8c7eddf95" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,19 +88,13 @@
       <file leaf-file-name="notif.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/admin/notif/notif.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="49" column="59" lean-forward="false" selection-start-line="49" selection-start-column="59" selection-end-line="49" selection-end-column="59" />
+            <state relative-caret-position="816">
+              <caret line="48" column="59" lean-forward="false" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
               <folding>
-                <marker date="1596456300190" expanded="true" signature="9:28" ph="..." />
-                <marker date="1596456300190" expanded="true" signature="39:48" ph="..." />
-                <marker date="1596456300190" expanded="true" signature="1844:1861" ph="..." />
-                <marker date="1596456300190" expanded="true" signature="1950:1966" ph="..." />
-                <marker date="1596456300190" expanded="true" signature="2020:2035" ph="..." />
-                <marker date="1596456300190" expanded="true" signature="2089:2112" ph="..." />
-                <marker date="1596456300190" expanded="true" signature="2166:2180" ph="..." />
-                <marker date="1596456300190" expanded="true" signature="2234:2247" ph="..." />
-                <marker date="1596456300190" expanded="true" signature="2301:2314" ph="..." />
-                <marker date="1596456300190" expanded="true" signature="2422:2454" ph="..." />
+                <marker date="1597754354082" expanded="true" signature="9:28" ph="..." />
+                <marker date="1597754354082" expanded="true" signature="39:48" ph="..." />
+                <marker date="1597754354082" expanded="true" signature="2187:2194" ph="..." />
+                <marker date="1597754354082" expanded="true" signature="2302:2334" ph="..." />
               </folding>
             </state>
           </provider>
@@ -113,17 +104,7 @@
         <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="22" column="50" lean-forward="false" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2020_07_15_184228_add_column_user.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2020_07_15_184228_add_column_user.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="16" column="52" lean-forward="false" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
+              <caret line="23" column="52" lean-forward="false" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -356,7 +337,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -403,6 +383,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -497,16 +478,17 @@
       <workItem from="1596373155874" duration="3354000" />
       <workItem from="1596442582890" duration="8009000" />
       <workItem from="1597746001826" duration="1044000" />
+      <workItem from="1601451698508" duration="517000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214589000" />
+    <option name="totallyTimeSpent" value="215106000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22541603" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22844176" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -915,26 +897,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/admin/notif/notif.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="49" column="59" lean-forward="false" selection-start-line="49" selection-start-column="59" selection-end-line="49" selection-end-column="59" />
+        <state relative-caret-position="816">
+          <caret line="48" column="59" lean-forward="false" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
           <folding>
-            <marker date="1596456300190" expanded="true" signature="9:28" ph="..." />
-            <marker date="1596456300190" expanded="true" signature="39:48" ph="..." />
-            <marker date="1596456300190" expanded="true" signature="1844:1861" ph="..." />
-            <marker date="1596456300190" expanded="true" signature="1950:1966" ph="..." />
-            <marker date="1596456300190" expanded="true" signature="2020:2035" ph="..." />
-            <marker date="1596456300190" expanded="true" signature="2089:2112" ph="..." />
-            <marker date="1596456300190" expanded="true" signature="2166:2180" ph="..." />
-            <marker date="1596456300190" expanded="true" signature="2234:2247" ph="..." />
-            <marker date="1596456300190" expanded="true" signature="2301:2314" ph="..." />
-            <marker date="1596456300190" expanded="true" signature="2422:2454" ph="..." />
+            <marker date="1597754354082" expanded="true" signature="9:28" ph="..." />
+            <marker date="1597754354082" expanded="true" signature="39:48" ph="..." />
+            <marker date="1597754354082" expanded="true" signature="2187:2194" ph="..." />
+            <marker date="1597754354082" expanded="true" signature="2302:2334" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2020_07_15_184228_add_column_user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="238">
           <caret line="16" column="52" lean-forward="false" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
           <folding />
         </state>
@@ -943,7 +919,7 @@
     <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="22" column="50" lean-forward="false" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+          <caret line="23" column="52" lean-forward="false" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
           <folding />
         </state>
       </provider>
