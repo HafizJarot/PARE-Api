@@ -36,6 +36,12 @@ class OrderController extends Controller
         ]);
 
 
+        $str1 = substr($request, 5, 2);
+        $str2 = substr($request, 5, 2);
+
+        $str = $str2 - $str1;
+        $str == 0 ? 1 : $str;
+
         $order = new Order();
         $order->id_penyewa = Auth::user()->id;
         $order->id_pemilik = $request->id_pemilik;
@@ -43,9 +49,9 @@ class OrderController extends Controller
         $order->harga = $request->harga;
         $sisi = $request->sisi;
         if ($sisi == 2){
-            $order->total_harga = ($request->harga * 2) * $request->selesai_sewa;
+            $order->total_harga = ($request->harga * 2) * $str;
         }else{
-            $order->total_harga = $request->harga * $request->selesai_sewa;
+            $order->total_harga = $request->harga * $str;
         }
         $order->tanggal_mulai_sewa = $request->tanggal_mulai_sewa;
         $order->selesai_sewa = $request->selesai_sewa;
