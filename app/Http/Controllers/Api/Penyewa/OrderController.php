@@ -82,7 +82,7 @@ class OrderController extends Controller
         return response()->json([
             'message' => 'Orderan berhasil',
             'status' => true,
-            'data' => new OrderResource($order)
+            'data' => (object)[]
             //'data' => $order->pemilik->fcm_token
         ]);
     }
