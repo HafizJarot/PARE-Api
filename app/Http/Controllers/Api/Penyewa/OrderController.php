@@ -30,8 +30,8 @@ class OrderController extends Controller
     public function store(Request $request)
     {
 
-        $str1 = substr($request, 5, 2);
-        $str2 = substr($request, 5, 2);
+        $str1 = substr($request->tanggal_mulai_sewa, 5, 2);
+        $str2 = substr($request->selesai_sewa, 5, 2);
 
         $str = (int)$str2 - (int)$str1;
         $str == 0 ? 1 : $str;
