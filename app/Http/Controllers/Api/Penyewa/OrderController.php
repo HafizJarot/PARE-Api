@@ -33,7 +33,7 @@ class OrderController extends Controller
         $str1 = substr($request, 5, 2);
         $str2 = substr($request, 5, 2);
 
-        $str = $str2 - $str1;
+        $str = (int)$str2 - (int)$str1;
         $str == 0 ? 1 : $str;
 
         $order = new Order();
