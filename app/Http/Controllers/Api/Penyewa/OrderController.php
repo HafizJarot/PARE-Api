@@ -29,12 +29,6 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'harga'=>'required|numeric',
-            'selesai_sewa'=>'required|numeric',
-            'tanggal_mulai_sewa'=>'required',
-        ]);
-
 
         $str1 = substr($request, 5, 2);
         $str2 = substr($request, 5, 2);
