@@ -37,41 +37,41 @@ class OrderController extends Controller
         $str == 0 ? 1 : $str;
 
         $order = new Order();
-        $order->id_penyewa = Auth::user()->id;
+        $order->id_penyewa = Auth::user()->penyewa->id;
         $order->id_pemilik = $request->id_pemilik;
         $order->id_produk = $request->id_produk;
         $order->harga = $request->harga;
         $sisi = $request->sisi;
         if ($sisi == 2){
-            $order->total_harga = ($request->harga * 2) * $str;
+            $order->total_harga = ((int)$request->harga * 2) * $str;
         }else{
-            $order->total_harga = $request->harga * $str;
+            $order->total_harga = (int)$request->harga * $str;
         }
         $order->tanggal_mulai_sewa = $request->tanggal_mulai_sewa;
-        $order->selesai_sewa = $request->selesai_sewa;
-        $order->verifikasi = 'menunggu di konfirmasi';
+        $order->tanggal_selesai_sewa = $request->selesai_sewa;
+        //$order->verifikasi = 'menunggu di konfirmasi';
         $order->status = 'pending';
         $order->save();
 
-        $pemilik = User::where('id', $order->pemilik->id)->first();
-        $pemilik->saldo += $order->total_harga;
-        $pemilik->update();
+        // $pemilik = User::where('id', $order->pemilik->id)->first();
+        // $pemilik->saldo += $order->total_harga;
+        // $pemilik->update();
 
-        $optionBuilder = new OptionsBuilder();
-        $optionBuilder->setTimeToLive(60 * 20);
-        $message = "ada pesanan masuk";
-        $notificationBuilder = new PayloadNotificationBuilder('pare app');
-        $notificationBuilder->setBody($message)->setSound('default');
+        // $optionBuilder = new OptionsBuilder();
+        // $optionBuilder->setTimeToLive(60 * 20);
+        // $message = "ada pesanan masuk";
+        // $notificationBuilder = new PayloadNotificationBuilder('pare app');
+        // $notificationBuilder->setBody($message)->setSound('default');
 
-        $dataBuilder = new PayloadDataBuilder();
-        $dataBuilder->addData(['a_data' => 'my_data']);
-        $option = $optionBuilder->build();
-        $notification = $notificationBuilder->build();
-        $_data = $dataBuilder->build();
+        // $dataBuilder = new PayloadDataBuilder();
+        // $dataBuilder->addData(['a_data' => 'my_data']);
+        // $option = $optionBuilder->build();
+        // $notification = $notificationBuilder->build();
+        // $_data = $dataBuilder->build();
 
-        // You must change it to get your tokens
-        $token = $order->pemilik->fcm_token;
-        FacadesFCM::sendTo($token, $option, $notification, $_data);
+        // // You must change it to get your tokens
+        // $token = $order->pemilik->fcm_token;
+        // FacadesFCM::sendTo($token, $option, $notification, $_data);
 
         return response()->json([
             'message' => 'Orderan berhasil',
