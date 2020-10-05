@@ -48,7 +48,7 @@ class OrderController extends Controller
             $order->total_harga = $request->harga * $request->selesai_sewa;
         }
         $order->tanggal_mulai_sewa = $request->tanggal_mulai_sewa;
-        $order->selesai_sewa = Carbon::parse($request->tanggal_mulai_sewa)->addMonths($request->selesai_sewa);
+        $order->selesai_sewa = $request->selesai_sewa;
         $order->verifikasi = 'menunggu di konfirmasi';
         $order->status = 'pending';
         $order->save();
