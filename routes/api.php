@@ -46,3 +46,4 @@ Route::get('order/penyewa', 'Api\Penyewa\OrderController@myOrders');
 Route::get('order/pemilik','Api\Pemilik\OrderController@myOrders');
 
 Route::get('pemilik', 'Api\Penyewa\PemilikController@fetchPemilik');
+Route::get('pemilik/profile', 'Api\Pemilik\UserController@profile');
