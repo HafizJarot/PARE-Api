@@ -82,8 +82,7 @@ class RegisterController extends Controller
         $checkPemilik = Pemilik::checkPemilik($request->no_izin);
 
         if(!$checkPemilik){
-            return Response::transform('no izin tidak terdaftar di sistem kami', 
-            false, (object)[], 400);
+            return Response::transform('no izin tidak terdaftar di sistem kami', false, (object)[], 400);
         }
 
         $user = new User();
@@ -99,8 +98,11 @@ class RegisterController extends Controller
         $checkPemilik->id_user = $user->id;
         $checkPemilik->update();
 
-        return Response::transform('berhasil register, silahkan menunggu konfirmasi dari admin', 
-        true, (object)[], 400);
+        return response()->json([
+            'message' => 'berhasil register, silahkan menunggu konfirmasi dari admin',
+            'status' => true,
+            'data' => (object)[]
+        ]);
     }
 
 }
