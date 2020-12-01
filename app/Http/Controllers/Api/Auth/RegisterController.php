@@ -61,13 +61,14 @@ class RegisterController extends Controller
         if(!$checkPemilik){
             $message = "no izin tidak terdaftar di sistem kami";
             return Response::transform($message, false, (object)[], 400);
+        }else{
+            $message = "berhasil mengambil data no izin";
+            return Response::transform($message, true, $checkPemilik, 200);
         }
-        $message = "berhasil mengambil data no izin";
-        return Response::transform($message, true, $checkPemilik, 200);
     }
 
 
-    public function registerPemilik(Request $request){
+    public function registerPemilik(Request $request) {
 
         $validator = Validator::make($request->all(), [
             'email'     => 'required|email|unique:users|max:20',
@@ -93,7 +94,7 @@ class RegisterController extends Controller
         $user->role = true;
         $user->status = false;
         $user->save();
-        $user->sendNotify('success');
+        //$user->sendNotify('success');
 
         $checkPemilik->id_user = $user->id;
         $checkPemilik->update();
