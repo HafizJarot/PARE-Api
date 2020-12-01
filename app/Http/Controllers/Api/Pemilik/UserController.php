@@ -18,10 +18,20 @@ class UserController extends Controller
     {
         $auth = Auth::user();
 
+        $item = [
+            "id" => $auth->id,
+            "email" => $auth->email,
+            "role" => $auth->role,
+            "api_token" => $auth->api_token,
+            "fcm_token" => $auth->fcm_token,
+            "status" => $auth->status,
+            "pemilik" => $auth->pemilik
+        ];
+
         return response()->json([
             'message' => 'success',
             'status' => true,
-            'data' => $auth
+            'data' => $item
         ]);
     }
 
