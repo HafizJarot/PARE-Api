@@ -38,7 +38,7 @@ Route::get('kecamatan', 'Api\KecamatanController@index');
 
 Route::group(['prefix' => 'pemilik'], function (){
     Route::post('register', 'Api\Auth\RegisterController@registerPemilik');
-    Route::get('{no_izin}', 'Api\Auth\RegisterController@checkNoIzin');
+    Route::get('izin/{no_izin}', 'Api\Auth\RegisterController@checkNoIzin');
 
     Route::get('profile', 'Api\Pemilik\UserController@profile');
 
