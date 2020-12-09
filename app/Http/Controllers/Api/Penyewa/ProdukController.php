@@ -16,6 +16,18 @@ class ProdukController extends Controller
         $this->middleware('auth:api');
     }
 
+    public function product(Request $request)
+    {
+        $products = Produk::where('id_pemilik', $request->id_pemilik)
+            ->where('id_kecamatan', $request->id_kecamatan)->get();
+
+        return response()->json([
+            'message' => 'berhasil',
+            'status' => true,
+            'data' => ProdukResource::collection($products)
+        ]);
+    }
+
     public function fetchProductByPemilik($pemilik_id)
     {
         try{

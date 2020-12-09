@@ -16,6 +16,7 @@ class CreateProduksTable extends Migration
         Schema::create('produks', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_pemilik')->unsigned();
+            $table->bigInteger('id_kecamatan')->unsigned();
             $table->integer('panjang');
             $table->integer('lebar');
             $table->string('foto');

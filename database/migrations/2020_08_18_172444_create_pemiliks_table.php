@@ -19,6 +19,7 @@ class CreatePemiliksTable extends Migration
             $table->string('no_izin', 20)->unique();
             $table->string('nama_perusahaan', 30);
             $table->string('alamat', 100);
+            $table->string('image')->nullable();
             $table->timestamps();
 
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');

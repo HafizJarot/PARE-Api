@@ -15,10 +15,11 @@ class PemilikResource extends JsonResource
     public function toArray($request)
     {
         return [
-            "id" => $this->id,
-            "no_izin" => $this->no_izin,
-            "nama_perusahaan" => $this->nama_perusahaan,
-            "alamat" => $this->alamat,
+            "id"                => $this->id,
+            "no_izin"           => $this->no_izin,
+            "nama_perusahaan"   => $this->nama_perusahaan,
+            "alamat"            => $this->alamat,
+            "image"             => $this->image
         ];
     }
 }

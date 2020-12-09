@@ -16,4 +16,9 @@ class Pemilik extends Model
     {
         return Pemilik::where('no_izin', $no_izin)->first();
     }
+
+    public function products()
+    {
+        return $this->hasMany(Produk::class, 'id_pemilik', 'id');
+    }
 }

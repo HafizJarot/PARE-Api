@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\Penyewa;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -22,7 +23,7 @@ class UserController extends Controller
         return response()->json([
             'message' => 'successfully get profile user',
             'status' => true,
-            'data' => $user
+            'data' => new UserResource($user)
         ]);
     }
 
