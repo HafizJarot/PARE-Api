@@ -71,6 +71,7 @@ class ProdukController extends Controller
             $produk = new Produk();
             $produk->id_pemilik = Auth::user()->pemilik->id;
             $produk->id_kecamatan = $request->id_kecamatan;
+            $produk->type = $request->type;
             $produk->panjang = $request->panjang;
             $produk->lebar = $request->lebar;
             $produk->masa_berdiri = $request->masa_berdiri;
