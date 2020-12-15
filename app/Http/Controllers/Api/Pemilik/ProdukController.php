@@ -63,8 +63,11 @@ class ProdukController extends Controller
 //            $filepath = 'produk/' . $filename;
 //            Storage::disk('s3')->put($filepath, file_get_contents($photo));
 
+
             $response = cloudinary()->upload($request->file('foto')->getRealPath(),
                 array("folder" => "produk", "overwrite" => TRUE, "resource_type" => "image"))->getSecurePath();
+
+//            dd($response);
 
 
             $produk = new Produk();
