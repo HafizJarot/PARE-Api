@@ -87,7 +87,7 @@ class ProdukController extends Controller
             return response()->json([
                 'message' => 'berhasil menambahkan data',
                 'status' => true,
-                'data' => new ProdukResource($produk)
+                'data' => (object)[]
             ]);
 
         } catch (\Exception $exception) {
