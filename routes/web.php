@@ -26,7 +26,9 @@ Route::post('/finish', function(){
 
 Route::get('dashboard', 'superadmin\DashboardController@index')->name('dashboard');
 Route::get('notify', 'superadmin\DashboardController@notify');
-Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('admin/login', 'superadmin\AuthController@showFormLogin')->name('admin.login');
+Route::post('admin/login', 'superadmin\AuthController@login')->name('admin.login.post');
+Route::get('admin/logout', 'superadmin\AuthController@logout')->name('admin.logout');
 
 Route::resource('/notif', 'superadmin\NotifikasiPemilikReklameController')->only('index');
 Route::get('/notif/{id}', 'superadmin\NotifikasiPemilikReklameController@update')->name('notif.update');
