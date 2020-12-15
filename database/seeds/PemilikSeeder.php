@@ -20,7 +20,7 @@ class PemilikSeeder extends Seeder
             'status'                => true
         ]);
 
-        $pemilik = \App\Pemilik::create([
+        \App\Pemilik::create([
            'id_user' => $user->id,
             'no_izin' => '12345',
             'nama_perusahaan' => 'wicaksono',

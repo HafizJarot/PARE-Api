@@ -12,21 +12,22 @@ use Illuminate\Support\Facades\Validator;
 
 class ProdukController extends Controller
 {
-	public function __construct()
+    public function __construct()
     {
         $this->middleware('auth:api');
     }
 
-    public function index(){
-	    try{
-	        $produks = Produk::where('id_pemilik', Auth::user()->pemilik->id)->get();
+    public function index()
+    {
+        try {
+            $produks = Produk::where('id_pemilik', Auth::user()->pemilik->id)->get();
 
-	        return response()->json([
+            return response()->json([
                 'message' => 'berhasil mengambil data berdasarkan user',
                 'status' => true,
                 'data' => ProdukResource::collection($produks)
             ]);
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             return response()->json([
                 'message' => $exception->getMessage(),
                 'status' => false,
@@ -37,8 +38,8 @@ class ProdukController extends Controller
 
     public function store(Request $request)
     {
-        try{
-            $validator = Validator::make($request->all(),[
+        try {
+            $validator = Validator::make($request->all(), [
                 'panjang' => 'required|numeric',
                 'lebar' => 'required|numeric',
                 'masa_berdiri' => 'required',
@@ -49,7 +50,7 @@ class ProdukController extends Controller
                 'alamat' => 'required'
             ]);
 
-            if ($validator->fails()){
+            if ($validator->fails()) {
                 return response()->json([
                     'message' => $validator->errors(),
                     'status' => false,
@@ -57,10 +58,14 @@ class ProdukController extends Controller
                 ]);
             }
 
-            $photo = $request->file('foto');
-            $filename = time() . '.' . $photo->getClientOriginalExtension();
-            $filepath = 'produk/' . $filename;
-            Storage::disk('s3')->put($filepath, file_get_contents($photo));
+//            $photo = $request->file('foto');
+//            $filename = time() . '.' . $photo->getClientOriginalExtension();
+//            $filepath = 'produk/' . $filename;
+//            Storage::disk('s3')->put($filepath, file_get_contents($photo));
+
+            $response = cloudinary()->upload($request->file('foto')->getRealPath(),
+                array("folder" => "produk", "overwrite" => TRUE, "resource_type" => "image"))->getSecurePath();
+
 
             $produk = new Produk();
             $produk->id_pemilik = Auth::user()->pemilik->id;
@@ -71,7 +76,7 @@ class ProdukController extends Controller
             $produk->sisi = $request->sisi;
             $produk->keterangan = $request->keterangan;
             $produk->harga_sewa = $request->harga_sewa;
-            $produk->foto = Storage::disk('s3')->url($filepath, $filename);
+            $produk->foto = $response;
             $produk->alamat = $request->alamat;
             $produk->status = true;
             $produk->save();
@@ -82,7 +87,7 @@ class ProdukController extends Controller
                 'data' => new ProdukResource($produk)
             ]);
 
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             return response()->json([
                 'message' => $exception->getMessage(),
                 'status' => false,
@@ -91,9 +96,10 @@ class ProdukController extends Controller
         }
     }
 
-    public function update(Request $request,$id) {
-        try{
-            $validator = Validator::make($request->all(),[
+    public function update(Request $request, $id)
+    {
+        try {
+            $validator = Validator::make($request->all(), [
                 'panjang' => 'numeric',
                 'lebar' => 'numeric',
                 'masa_berdiri' => 'required',
@@ -102,7 +108,7 @@ class ProdukController extends Controller
                 'foto' => 'file|image',
             ]);
 
-            if ($validator->fails()){
+            if ($validator->fails()) {
                 return response()->json([
                     'message' => $validator->errors(),
                     'status' => false,
@@ -128,7 +134,7 @@ class ProdukController extends Controller
                 'status' => true,
                 'data' => (object)[]
             ]);
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             return response()->json([
                 'message' => $exception->getMessage(),
                 'status' => false,
@@ -156,10 +162,11 @@ class ProdukController extends Controller
         ]);
     }
 
-    public function delete($id){
-	    try{
-	        $produk = Produk::find($id);
-	        $produk->delete();
+    public function delete($id)
+    {
+        try {
+            $produk = Produk::find($id);
+            $produk->delete();
 
             return response()->json([
                 'message' => 'Berhasil Dihapus',
@@ -167,7 +174,7 @@ class ProdukController extends Controller
                 'data' => (object)[]
             ]);
 
-        } catch (\Exception $exception){
+        } catch (\Exception $exception) {
             return response()->json([
                 'message' => $exception->getMessage(),
                 'status' => false,
