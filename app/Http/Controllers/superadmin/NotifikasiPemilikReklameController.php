@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\superadmin;
 
-use App\PemilikReklame;
 use App\User;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Pemilik;
+use LaravelFCM\Message\OptionsBuilder;
+use LaravelFCM\Message\PayloadDataBuilder;
+use LaravelFCM\Message\PayloadNotificationBuilder;
+use LaravelFCM\Facades\FCM as FacadesFCM;
 
 class NotifikasiPemilikReklameController extends Controller
 {
@@ -35,7 +37,29 @@ class NotifikasiPemilikReklameController extends Controller
         $pemilik= Pemilik::find($id);
         $user = User::whereId($pemilik->id_user)->first();
         $user->update(['status' => true]);
+
+        $this->notification($user);
         return redirect()->route('notif.index');
+    }
+
+    public function notification($user)
+    {
+        $optionBuilder = new OptionsBuilder();
+        $optionBuilder->setTimeToLive(60 * 20);
+        $message = "akun anda berhasil di konfirmasi, silahkan login";
+        $notificationBuilder = new PayloadNotificationBuilder('pare app');
+        $notificationBuilder->setBody($message)->setSound('default');
+
+        $dataBuilder = new PayloadDataBuilder();
+        $dataBuilder->addData(['a_data' => 'my_data']);
+        $option = $optionBuilder->build();
+        $notification = $notificationBuilder->build();
+        $_data = $dataBuilder->build();
+
+        // You must change it to get your tokens
+        $token = $user->fcm_token;
+        FacadesFCM::sendTo($token, $option, $notification, $_data);
+        return true;
     }
 
 

@@ -67,8 +67,6 @@ class ProdukController extends Controller
             $response = cloudinary()->upload($request->file('foto')->getRealPath(),
                 array("folder" => "produk", "overwrite" => TRUE, "resource_type" => "image"))->getSecurePath();
 
-//            dd($response);
-
 
             $produk = new Produk();
             $produk->id_pemilik = Auth::user()->pemilik->id;

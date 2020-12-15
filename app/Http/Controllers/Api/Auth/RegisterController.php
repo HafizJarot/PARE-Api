@@ -1,18 +1,16 @@
 <?php
 
 namespace App\Http\Controllers\Api\Auth;
+
 use App\Http\Controllers\Controller;
 use App\Pemilik;
 use App\Penyewa;
-use App\Providers\RouteServiceProvider;
 use App\Response;
 use App\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
-use Laravel\Ui\Presets\React;
 
 class RegisterController extends Controller
 {
