@@ -29,19 +29,19 @@ class UserController extends Controller
 
     public function ambilUang(Request $request)
     {
-        $pemilik = Auth::user();
+        $user = Auth::user();
 
-        if ($pemilik->saldo < $request->saldo){
+        if ($user->pemilik->bank->saldo < $request->saldo) {
             return response()->json([
                 'message' => 'saldo anda kurang dari Rp. '.$request->saldo,
                 'status' => false,
                 'data' => (object)[]
             ]);
         }
-
-        $pemilik->saldo -= $request->saldo;
-        $pemilik->update();
-        $this->sendEmail($pemilik, $request);
+        $user->pemilik->bank->update([
+            'saldo' => $user->pemilik->bank->saldo - $request->saldo,
+        ]);
+        $this->sendEmail($user, $request);
 
         return response()->json([
             'message' => 'successfully ambil uang',
@@ -52,11 +52,11 @@ class UserController extends Controller
 
     public function sendEmail($user, $request)
     {
-        $content = $user->nama_perusahaan.' ingin menarik saldo ';
+        $content = $user->pemilik->nama_perusahaan.' ingin menarik saldo ';
         Mail::send(
             'emails.tarik-saldo',
             [
-                'nama_perusahaan' => $user->nama_perusahaan,
+                'nama_perusahaan' => $user->pemilik->nama_perusahaan,
                 'content' => $content,
                 'name_bank' => $request->nama_bank,
                 'account_name' => $request->nama_rekening,
@@ -65,7 +65,7 @@ class UserController extends Controller
             ],
             function ($message) use ($user) {
                 $message->subject('Tarik Saldo');
-                $message->from($user->email, $user->business_name);
+                $message->from($user->email, $user->pemilik->nama_perusahaan);
                 $message->to('pare@gmail.com');
             }
         );

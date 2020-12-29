@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pemilik extends Model
 {
     protected $guarded = [];
-    
+
     public function user(){
         return $this->belongsTo(User::class,'id_user','id');
     }
@@ -20,5 +20,10 @@ class Pemilik extends Model
     public function products()
     {
         return $this->hasMany(Produk::class, 'id_pemilik', 'id');
+    }
+
+    public function bank()
+    {
+        return $this->hasOne(Bank::class, 'id_pemilik', 'id');
     }
 }

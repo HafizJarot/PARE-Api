@@ -8,6 +8,8 @@ class Bank extends Model
 {
     protected $guarded = [];
 
+    public $timestamps = false;
+
     public function pemilik()
     {
         return $this->belongsTo(Pemilik::class, 'pemilik_id', 'id');

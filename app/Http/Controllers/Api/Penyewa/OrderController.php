@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\Penyewa;
 
+use App\Bank;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Midtrans\Config;
 use App\Http\Controllers\Midtrans\Snap;
@@ -29,7 +30,6 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
-
         $str1 = substr($request->tanggal_mulai_sewa, 5, 2);
         $str2 = substr($request->selesai_sewa, 5, 2);
 
@@ -53,7 +53,11 @@ class OrderController extends Controller
         $order->status = 'pending';
         $order->save();
 
-        // $pemilik = User::where('id', $order->pemilik->id)->first();
+        //$pemilik = User::where('id', $order->pemilik->id)->first();
+        $newSaldo = $order->pemilik->bank->saldo + $order->total_harga;
+        $order->pemilik->bank->update([
+            'saldo' => $newSaldo
+        ]);
         // $pemilik->saldo += $order->total_harga;
         // $pemilik->update();
 
