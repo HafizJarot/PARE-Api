@@ -28,101 +28,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <file leaf-file-name="users.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/pages/admin/users/pemilik/users.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Pemilik/UserController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Penyewa/UserController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="25" column="32" lean-forward="false" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserResource.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Resources/UserResource.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Auth/LoginController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="53" column="14" lean-forward="true" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PemilikResource.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Resources/PemilikResource.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-51">
-              <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PenyewaResource.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Resources/PenyewaResource.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-459">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1597751222487" expanded="true" signature="9:28" ph="..." />
+                <marker date="1597751222487" expanded="true" signature="39:48" ph="..." />
+                <marker date="1597751222487" expanded="true" signature="439:470" ph="..." />
+                <marker date="1597751222487" expanded="true" signature="1306:1327" ph="..." />
+                <marker date="1597751222487" expanded="true" signature="1416:1432" ph="..." />
+                <marker date="1597751222487" expanded="true" signature="1486:1503" ph="..." />
+                <marker date="1597751222487" expanded="true" signature="1566:1598" ph="..." />
+                <marker date="1597751222487" expanded="true" signature="1604:1629" ph="..." />
+                <marker date="1597751222487" expanded="true" signature="1687:1703" ph="..." />
+                <marker date="1597751222487" expanded="true" signature="1757:1772" ph="..." />
+                <marker date="1597751222487" expanded="true" signature="1826:1841" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BankResource.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Resources/BankResource.php">
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/superadmin/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProdukController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Penyewa/ProdukController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProdukController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Pemilik/ProdukController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="161" column="23" lean-forward="false" selection-start-line="161" selection-start-column="23" selection-end-line="161" selection-end-column="23" />
+            <state relative-caret-position="170">
+              <caret line="28" column="22" lean-forward="false" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -157,7 +89,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Pemilik/OrderController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_07_15_184228_add_column_user.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
@@ -191,7 +122,6 @@
         <option value="$PROJECT_DIR$/app/Pemilik.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Penyewa/ProdukController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Penyewa/PemilikController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Resources/PemilikResource.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Penyewa/UserController.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
@@ -208,6 +138,8 @@
         <option value="$PROJECT_DIR$/database/migrations/2020_12_15_152806_add_column_type_product.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Pemilik/ProdukController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Pemilik/UserController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Resources/BankResource.php" />
+        <option value="$PROJECT_DIR$/app/Http/Resources/PemilikResource.php" />
       </list>
     </option>
   </component>
@@ -389,34 +321,7 @@
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Api" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="papanreklame" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Auth" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="papanreklame" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Pemilik" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="papanreklame" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Penyewa" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="superadmin" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
@@ -424,6 +329,60 @@
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="papanreklame" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="papanreklame" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="papanreklame" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="papanreklame" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="papanreklame" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="notif" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="papanreklame" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="users" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="papanreklame" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="users" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pemilik" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="papanreklame" type="b2602c69:ProjectViewProjectNode" />
@@ -534,12 +493,12 @@
       <workItem from="1607498394616" duration="2631000" />
       <workItem from="1608007169669" duration="12531000" />
       <workItem from="1609221861326" duration="1248000" />
-      <workItem from="1610512151273" duration="5046000" />
+      <workItem from="1610512151273" duration="5544000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="251698000" />
+    <option name="totallyTimeSpent" value="252196000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -609,20 +568,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/seeds/ProductSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="11" lean-forward="false" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2020_12_09_115831_create_kecamatans_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-31">
@@ -893,24 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/admin/notif/notif.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1597754354082" expanded="true" signature="9:28" ph="..." />
-            <marker date="1597754354082" expanded="true" signature="39:48" ph="..." />
-            <marker date="1597754354082" expanded="true" signature="1785:1802" ph="..." />
-            <marker date="1597754354082" expanded="true" signature="1891:1907" ph="..." />
-            <marker date="1597754354082" expanded="true" signature="1961:1976" ph="..." />
-            <marker date="1597754354082" expanded="true" signature="2030:2053" ph="..." />
-            <marker date="1597754354082" expanded="true" signature="2107:2121" ph="..." />
-            <marker date="1597754354082" expanded="true" signature="2175:2194" ph="..." />
-            <marker date="1597754354082" expanded="true" signature="2302:2334" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/templates/partials/_sidebar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -988,22 +915,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Resources/PemilikResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Resources/BankResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Pemilik/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1032,6 +943,68 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/BankResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/PemilikResource.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="22" column="58" lean-forward="false" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/admin/notif/notif.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="48" column="64" lean-forward="true" selection-start-line="48" selection-start-column="64" selection-end-line="48" selection-end-column="64" />
+          <folding>
+            <marker date="1597754354082" expanded="true" signature="9:28" ph="..." />
+            <marker date="1597754354082" expanded="true" signature="39:48" ph="..." />
+            <marker date="1597754354082" expanded="true" signature="1785:1802" ph="..." />
+            <marker date="1597754354082" expanded="true" signature="1891:1907" ph="..." />
+            <marker date="1597754354082" expanded="true" signature="1961:1976" ph="..." />
+            <marker date="1597754354082" expanded="true" signature="2030:2053" ph="..." />
+            <marker date="1597754354082" expanded="true" signature="2107:2121" ph="..." />
+            <marker date="1597754354082" expanded="true" signature="2175:2194" ph="..." />
+            <marker date="1597754354082" expanded="true" signature="2302:2334" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/admin/users/pemilik/users.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-459">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1597751222487" expanded="true" signature="9:28" ph="..." />
+            <marker date="1597751222487" expanded="true" signature="39:48" ph="..." />
+            <marker date="1597751222487" expanded="true" signature="439:470" ph="..." />
+            <marker date="1597751222487" expanded="true" signature="1306:1327" ph="..." />
+            <marker date="1597751222487" expanded="true" signature="1416:1432" ph="..." />
+            <marker date="1597751222487" expanded="true" signature="1486:1503" ph="..." />
+            <marker date="1597751222487" expanded="true" signature="1566:1598" ph="..." />
+            <marker date="1597751222487" expanded="true" signature="1604:1629" ph="..." />
+            <marker date="1597751222487" expanded="true" signature="1687:1703" ph="..." />
+            <marker date="1597751222487" expanded="true" signature="1757:1772" ph="..." />
+            <marker date="1597751222487" expanded="true" signature="1826:1841" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/superadmin/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="28" column="22" lean-forward="false" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
           <folding />
         </state>
       </provider>
