@@ -119,17 +119,16 @@ class ProdukController extends Controller
             }
 
             $produk = Produk::findOrFail($id);
-            $produk->id_pemilik = Auth::user()->pemilik->id;
-            $produk->id_kecamatan = $request->id_kecamatan;
-            $produk->panjang = $request->panjang;
-            $produk->lebar = $request->lebar;
-            $produk->masa_berdiri = $request->masa_berdiri;
-            $produk->sisi = $request->sisi;
-            $produk->keterangan = $request->keterangan;
-            $produk->harga_sewa = $request->harga_sewa;
-            $produk->alamat = $request->alamat;
-            $produk->status = false;
+            $produk->id_kecamatan = $request->id_kecamatan ?? $produk->id_kecamatan ;
+            $produk->panjang = $request->panjang ?? $produk->panjang;
+            $produk->lebar = $request->lebar ?? $produk->lebar ;
+            $produk->masa_berdiri = $request->masa_berdiri ?? $produk->masa_berdiri;
+            $produk->sisi = $request->sisi ?? $produk->sisi;
+            $produk->keterangan = $request->keterangan ?? $produk->keterangan;
+            $produk->harga_sewa = $request->harga_sewa ?? $produk->harga_sewa;
+            $produk->alamat = $request->alamat ?? $produk->alamat;
             $produk->update();
+
 
             return response()->json([
                 'message' => 'berhasil update',
@@ -148,14 +147,20 @@ class ProdukController extends Controller
 
     public function updatePhoto(Request $request, $id)
     {
-        $photo = $request->file('foto');
-        $filename = time() . '.' . $photo->getClientOriginalExtension();
-        $filepath = 'produk/' . $filename;
-        Storage::disk('s3')->put($filepath, file_get_contents($photo));
+//        $photo = $request->file('foto');
+//        $filename = time() . '.' . $photo->getClientOriginalExtension();
+//        $filepath = 'produk/' . $filename;
+//        Storage::disk('s3')->put($filepath, file_get_contents($photo));
 
-        $produk = Produk::findOrFail($id);
-        $produk->foto = Storage::disk('s3')->url($filepath, $filename);
-        $produk->update();
+
+
+        if ($request->hasFile('foto')){
+            $response = cloudinary()->upload($request->file('foto')->getRealPath(),
+                array("folder" => "produk", "overwrite" => TRUE, "resource_type" => "image"))->getSecurePath();
+            $produk = Produk::findOrFail($id);
+            $produk->foto = $response;
+            $produk->update();
+        }
 
         return response()->json([
             'message' => 'berhasil update',
