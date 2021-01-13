@@ -20,7 +20,7 @@ class PemilikResource extends JsonResource
             "nama_perusahaan"   => $this->nama_perusahaan,
             "alamat"            => $this->alamat,
             "image"             => $this->image,
-            "saldo"             => $this->bank->saldo,
+            "saldo"             => $this->bank->saldo ?? 0,
         ];
     }
 }
