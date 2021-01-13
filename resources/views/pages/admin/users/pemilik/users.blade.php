@@ -27,7 +27,6 @@
                                     <th>No Izin</th>
                                     <th>Nama Pemilik</th>
                                     <th>Alamat</th>
-                                    <th>Nomor Telepon</th>
                                     <th>Email</th>
 
                                 </tr>
@@ -39,7 +38,6 @@
                                         <td>{{$pemilik->no_izin}}</td>
                                         <td><a href="{{route('user.show', $pemilik->id)}}">{{$pemilik->nama_perusahaan}}</a></td>
                                         <td>{{$pemilik->alamat}}</td>
-                                        <td>{{$pemilik->no_hp}}</td>
                                         <td>{{$pemilik->user->email ?? ''}}</td>
 
                                     </tr>
