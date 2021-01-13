@@ -30,7 +30,6 @@ Route::get('user/email/verify/{id}', 'Api\Auth\VerificationController@verify')->
 Route::get('user/email/resend', 'Api\Auth\VerificationController@resend')->name('api.verification.resend');
 Route::get('user/profile', 'Api\Penyewa\UserController@profile');
 Route::get('user/profile/update', 'Api\Penyewa\UserController@updateProfile');
-Route::post('user/ambil/uang', 'Api\Penyewa\UserController@ambilUang');
 
 Route::get('kecamatan', 'Api\KecamatanController@index');
 
@@ -41,6 +40,7 @@ Route::group(['prefix' => 'pemilik'], function (){
     Route::get('izin/{no_izin}', 'Api\Auth\RegisterController@checkNoIzin');
 
     Route::get('profile', 'Api\Pemilik\UserController@profile');
+    Route::post('ambil/uang', 'Api\Penyewa\UserController@ambilUang');
 
     Route::get('produk','Api\Pemilik\ProdukController@index');
     Route::post('produk/store', 'Api\Pemilik\ProdukController@store');
@@ -56,12 +56,9 @@ Route::group(['prefix' => 'penyewa'], function (){
 
     Route::post('register','Api\Auth\RegisterController@registerPenyewa');
     Route::get('profile', 'Api\Penyewa\UserController@profile');
-
     Route::get('pemilik/all', 'Api\Penyewa\PemilikController@all');
     Route::get('pemilik/{id_kecamatan}', 'Api\Penyewa\PemilikController@search');
-
     Route::post('product', 'Api\Penyewa\ProdukController@product');
-
     Route::post('order/store', 'Api\Penyewa\OrderController@store');
     Route::get('order', 'Api\Penyewa\OrderController@myOrders');
 });
