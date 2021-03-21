@@ -18,11 +18,12 @@ class ProdukController extends Controller
 
     public function product(Request $request)
     {
-        if($request->id_kecamatan){
+        if($request->id_kecamatan == null){
+            $products = Produk::where('id_pemilik', $request->id_pemilik)->get();
+
+        }else{
             $products = Produk::where('id_pemilik', $request->id_pemilik)
                 ->where('id_kecamatan', $request->id_kecamatan)->get();
-        }else{
-            $products = Produk::where('id_pemilik', $request->id_pemilik)->get();
         }
 
 
