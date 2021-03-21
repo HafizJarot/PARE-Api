@@ -18,7 +18,7 @@ class ProdukController extends Controller
 
     public function product(Request $request)
     {
-        if($request->id_pemilik){
+        if($request->id_kecamatan){
             $products = Produk::where('id_pemilik', $request->id_pemilik)
                 ->where('id_kecamatan', $request->id_kecamatan)->get();
         }else{
