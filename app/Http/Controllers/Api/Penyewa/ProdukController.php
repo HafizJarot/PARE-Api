@@ -18,8 +18,13 @@ class ProdukController extends Controller
 
     public function product(Request $request)
     {
-        $products = Produk::where('id_pemilik', $request->id_pemilik)
-            ->where('id_kecamatan', $request->id_kecamatan)->get();
+        if($request->id_pemilik){
+            $products = Produk::where('id_pemilik', $request->id_pemilik)
+                ->where('id_kecamatan', $request->id_kecamatan)->get();
+        }else{
+            $products = Produk::where('id_pemilik', $request->id_pemilik)->get();
+        }
+
 
         return response()->json([
             'message' => 'berhasil',
